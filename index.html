@@ -14,6 +14,7 @@
             --argent-fonce: #C0C0C0;
             --texte: #333333;
             --blanc: #FFFFFF;
+            --gris-lecture: #f8f9fa;
         }
 
         * {
@@ -27,6 +28,7 @@
             background-color: var(--bleu-ciel-clair);
             color: var(--texte);
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
         .container {
@@ -35,82 +37,12 @@
             padding: 0 20px;
         }
 
-        /* Header et Navigation */
-        header {
-            background-color: var(--blanc);
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            animation: slideDown 0.8s ease-out;
-        }
-
-        @keyframes slideDown {
-            from { transform: translateY(-100%); }
-            to { transform: translateY(0); }
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--bleu-ciel-fonce);
-            display: flex;
-            align-items: center;
-        }
-
-        .logo i {
-            margin-right: 10px;
-            color: var(--argent-fonce);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 30px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--texte);
-            font-weight: 500;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: var(--bleu-ciel-fonce);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--bleu-ciel-fonce);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* Section Hero avec image de fond */
+        /* Section Hero avec image de fond optimisée */
         .hero {
-            background: linear-gradient(rgba(135, 206, 235, 0.7), rgba(135, 206, 235, 0.5)), 
-                        url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
-            height: 90vh;
+            background: 
+                linear-gradient(rgba(20, 30, 48, 0.7), rgba(36, 59, 85, 0.7)), 
+                url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            height: 70vh;
             display: flex;
             align-items: center;
             text-align: center;
@@ -119,21 +51,11 @@
             overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, var(--bleu-ciel) 0%, transparent 70%);
-            z-index: -1;
-        }
-
         .hero-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             animation: fadeInUp 1s ease-out;
+            padding: 0 20px;
         }
 
         @keyframes fadeInUp {
@@ -148,55 +70,32 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: clamp(2.5rem, 5vw, 4rem);
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            animation: titleGlow 3s infinite alternate;
-        }
-
-        @keyframes titleGlow {
-            from {
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            }
-            to {
-                text-shadow: 2px 2px 20px rgba(255, 255, 255, 0.5);
-            }
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            line-height: 1.2;
+            font-weight: 700;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
             margin-bottom: 30px;
-            line-height: 1.6;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
         }
 
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--bleu-ciel-fonce);
-            color: var(--blanc);
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(90, 169, 214, 0.4);
-        }
-
-        .btn:hover {
-            background-color: var(--blanc);
-            color: var(--bleu-ciel-fonce);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(90, 169, 214, 0.6);
-        }
-
-        /* Section Article */
+        /* Section Article avec fond gris */
         .article {
-            padding: 100px 0;
-            background-color: var(--blanc);
+            padding: 80px 0;
+            background-color: var(--gris-lecture);
         }
 
         .article-content {
             max-width: 800px;
             margin: 0 auto;
+            background-color: var(--blanc);
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
         }
 
         .article-meta {
@@ -205,6 +104,8 @@
             margin-bottom: 40px;
             color: var(--argent-fonce);
             font-size: 0.9rem;
+            border-bottom: 1px solid var(--argente);
+            padding-bottom: 20px;
         }
 
         .article-text {
@@ -214,6 +115,7 @@
 
         .article-text p {
             margin-bottom: 30px;
+            text-align: justify;
         }
 
         .highlight {
@@ -223,18 +125,21 @@
             margin: 40px 0;
             font-style: italic;
             font-size: 1.2rem;
+            border-radius: 0 8px 8px 0;
         }
 
         /* Section À propos de l'auteur */
         .about-author {
             padding: 80px 0;
-            background-color: var(--bleu-ciel-clair);
+            background-color: var(--blanc);
         }
 
         .author-content {
             display: flex;
             align-items: center;
             gap: 40px;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .author-image {
@@ -243,6 +148,7 @@
             border-radius: 50%;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            flex-shrink: 0;
         }
 
         .author-image img {
@@ -261,295 +167,56 @@
             line-height: 1.6;
         }
 
-        /* Section Articles similaires */
-        .related-articles {
-            padding: 80px 0;
-            background-color: var(--blanc);
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-            position: relative;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--bleu-ciel-fonce);
-            margin-bottom: 15px;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(to right, var(--bleu-ciel), var(--argent-fonce));
-            margin: 0 auto;
-        }
-
-        .articles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .article-card {
-            background-color: var(--argente);
-            border-radius: 10px;
-            overflow: hidden;
-            transition: all 0.4s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .article-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .article-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .article-card-content {
-            padding: 20px;
-        }
-
-        .article-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: var(--bleu-ciel-fonce);
-        }
-
-        .article-card p {
-            line-height: 1.6;
-            color: var(--texte);
-            margin-bottom: 15px;
-        }
-
-        .article-card a {
-            color: var(--bleu-ciel-fonce);
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-        }
-
-        .article-card a i {
-            margin-left: 5px;
-            transition: transform 0.3s;
-        }
-
-        .article-card a:hover i {
-            transform: translateX(5px);
-        }
-
-        /* Section Commentaires */
-        .comments {
-            padding: 80px 0;
-            background-color: var(--bleu-ciel-clair);
-        }
-
-        .comment-form {
-            background-color: var(--blanc);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            margin-bottom: 50px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid var(--argent-fonce);
-            border-radius: 5px;
-            font-size: 1rem;
-            transition: border 0.3s;
-        }
-
-        .form-control:focus {
-            border-color: var(--bleu-ciel);
-            outline: none;
-        }
-
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .comments-list {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .comment {
-            background-color: var(--blanc);
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .comment-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-        }
-
-        .comment-author {
-            font-weight: 600;
-            color: var(--bleu-ciel-fonce);
-        }
-
-        .comment-date {
-            color: var(--argent-fonce);
-            font-size: 0.9rem;
-        }
-
-        .comment-text {
-            line-height: 1.6;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--bleu-ciel-fonce);
-            color: var(--blanc);
-            padding: 60px 0 20px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-column h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            position: relative;
-        }
-
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -8px;
-            width: 40px;
-            height: 2px;
-            background-color: var(--bleu-ciel);
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links a {
-            color: var(--argente);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: var(--blanc);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: var(--blanc);
-            transition: all 0.3s;
-        }
-
-        .social-links a:hover {
-            background-color: var(--bleu-ciel);
-            transform: translateY(-3px);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            color: var(--argente);
-        }
-
         /* Responsive */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+            .hero {
+                height: 60vh;
             }
-
-            .hero h1 {
-                font-size: 2.5rem;
+            
+            .article-content {
+                padding: 30px 20px;
             }
-
+            
+            .article-meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
             .author-content {
                 flex-direction: column;
                 text-align: center;
+            }
+            
+            .author-image {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                height: 50vh;
+            }
+            
+            .article {
+                padding: 50px 0;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">
-                    <i class="fas fa-pen-fancy"></i>
-                    <span>Réflexions Éphémères</span>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#accueil">Accueil</a></li>
-                    <li><a href="#articles">Articles</a></li>
-                    <li><a href="#apropos">À propos</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
     <!-- Section Hero -->
-    <section class="hero" id="accueil">
+    <section class="hero">
         <div class="container">
             <div class="hero-content">
                 <h1>Bientôt je disparaîtrai pour toujours, mais ce n'est pas grave tant que quelqu'un lit ceci</h1>
                 <p>Une réflexion profonde sur la vie, la mort et le sens de notre existence</p>
-                <a href="#article" class="btn">Lire l'article</a>
             </div>
         </div>
     </section>
 
     <!-- Section Article -->
-    <section class="article" id="article">
+    <section class="article">
         <div class="container">
             <div class="article-content">
                 <div class="article-meta">
@@ -596,141 +263,6 @@
         </div>
     </section>
 
-    <!-- Section Articles similaires -->
-    <section class="related-articles">
-        <div class="container">
-            <div class="section-title">
-                <h2>Articles similaires</h2>
-                <p>Découvrez d'autres réflexions inspirantes</p>
-            </div>
-            <div class="articles-grid">
-                <div class="article-card">
-                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Article 1">
-                    <div class="article-card-content">
-                        <h3>L'art de vivre pleinement</h3>
-                        <p>Comment trouver du sens dans chaque instant et transformer notre quotidien.</p>
-                        <a href="#">Lire la suite <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="article-card">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Article 2">
-                    <div class="article-card-content">
-                        <h3>Surmonter ses peurs</h3>
-                        <p>Des stratégies pour affronter l'anxiété et reprendre le contrôle de sa vie.</p>
-                        <a href="#">Lire la suite <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="article-card">
-                    <img src="https://images.unsplash.com/photo-1543332164-6e82f355badc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Article 3">
-                    <div class="article-card-content">
-                        <h3>Le pouvoir des petites habitudes</h3>
-                        <p>Comment de petits changements peuvent transformer radicalement votre vie.</p>
-                        <a href="#">Lire la suite <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Commentaires -->
-    <section class="comments">
-        <div class="container">
-            <div class="section-title">
-                <h2>Commentaires</h2>
-                <p>Partagez vos réflexions</p>
-            </div>
-            
-            <div class="comment-form">
-                <h3>Laisser un commentaire</h3>
-                <form>
-                    <div class="form-group">
-                        <label for="name">Nom</label>
-                        <input type="text" id="name" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="comment">Commentaire</label>
-                        <textarea id="comment" class="form-control" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Publier le commentaire</button>
-                </form>
-            </div>
-            
-            <div class="comments-list">
-                <div class="comment">
-                    <div class="comment-header">
-                        <span class="comment-author">Marie L.</span>
-                        <span class="comment-date">16 mars 2023</span>
-                    </div>
-                    <div class="comment-text">
-                        Cet article m'a profondément touchée. Merci d'avoir partagé ces réflexions si précieuses. Cela me rappelle l'importance de vivre chaque jour pleinement.
-                    </div>
-                </div>
-                
-                <div class="comment">
-                    <div class="comment-header">
-                        <span class="comment-author">Thomas P.</span>
-                        <span class="comment-date">15 mars 2023</span>
-                    </div>
-                    <div class="comment-text">
-                        Un message poignant et rempli de sagesse. Cela m'a fait réfléchir à mes propres priorités dans la vie. Merci pour ce partage.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Réflexions Éphémères</h3>
-                    <p>Un blog dédié aux réflexions profondes sur la vie, l'existence et le sens que nous donnons à notre passage sur Terre.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3>Navigation</h3>
-                    <ul class="footer-links">
-                        <li><a href="#accueil">Accueil</a></li>
-                        <li><a href="#articles">Articles</a></li>
-                        <li><a href="#apropos">À propos</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Catégories</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Réflexions</a></li>
-                        <li><a href="#">Développement personnel</a></li>
-                        <li><a href="#">Philosophie</a></li>
-                        <li><a href="#">Inspirations</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Newsletter</h3>
-                    <p>Abonnez-vous pour recevoir nos dernières réflexions.</p>
-                    <form>
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Votre email" required>
-                        </div>
-                        <button type="submit" class="btn">S'abonner</button>
-                    </form>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2023 Réflexions Éphémères. Tous droits réservés.</p>
-            </div>
-        </div>
-    </footer>
-
     <script>
         // Animation au défilement
         document.addEventListener('DOMContentLoaded', function() {
@@ -749,7 +281,7 @@
             }, observerOptions);
 
             // Observer les éléments à animer
-            const elementsToAnimate = document.querySelectorAll('.article-card, .comment, .author-content');
+            const elementsToAnimate = document.querySelectorAll('.article-content, .author-content');
             
             elementsToAnimate.forEach(el => {
                 el.style.opacity = '0';
