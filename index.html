@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bientôt je disparaîtrai pour toujours</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bleu-ciel: #87CEEB;
+            --bleu-ciel-clair: #E0F7FF;
+            --bleu-ciel-fonce: #5AA9D6;
+            --argente: #F0F0F0;
+            --argent-fonce: #C0C0C0;
+            --texte: #333333;
+            --blanc: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bleu-ciel-clair);
+            color: var(--texte);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header et Navigation */
+        header {
+            background-color: var(--blanc);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--bleu-ciel-fonce);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color: var(--argent-fonce);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--texte);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--bleu-ciel-fonce);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--bleu-ciel-fonce);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Section Hero avec image de fond */
+        .hero {
+            background: linear-gradient(rgba(135, 206, 235, 0.7), rgba(135, 206, 235, 0.5)), 
+                        url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--blanc);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--bleu-ciel) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: titleGlow 3s infinite alternate;
+        }
+
+        @keyframes titleGlow {
+            from {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            to {
+                text-shadow: 2px 2px 20px rgba(255, 255, 255, 0.5);
+            }
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--bleu-ciel-fonce);
+            color: var(--blanc);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(90, 169, 214, 0.4);
+        }
+
+        .btn:hover {
+            background-color: var(--blanc);
+            color: var(--bleu-ciel-fonce);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(90, 169, 214, 0.6);
+        }
+
+        /* Section Article */
+        .article {
+            padding: 100px 0;
+            background-color: var(--blanc);
+        }
+
+        .article-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            color: var(--argent-fonce);
+            font-size: 0.9rem;
+        }
+
+        .article-text {
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .article-text p {
+            margin-bottom: 30px;
+        }
+
+        .highlight {
+            background-color: var(--bleu-ciel-clair);
+            padding: 30px;
+            border-left: 4px solid var(--bleu-ciel-fonce);
+            margin: 40px 0;
+            font-style: italic;
+            font-size: 1.2rem;
+        }
+
+        /* Section À propos de l'auteur */
+        .about-author {
+            padding: 80px 0;
+            background-color: var(--bleu-ciel-clair);
+        }
+
+        .author-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .author-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h3 {
+            font-size: 1.8rem;
+            color: var(--bleu-ciel-fonce);
+            margin-bottom: 10px;
+        }
+
+        .author-info p {
+            line-height: 1.6;
+        }
+
+        /* Section Articles similaires */
+        .related-articles {
+            padding: 80px 0;
+            background-color: var(--blanc);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--bleu-ciel-fonce);
+            margin-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, var(--bleu-ciel), var(--argent-fonce));
+            margin: 0 auto;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .article-card {
+            background-color: var(--argente);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .article-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .article-card-content {
+            padding: 20px;
+        }
+
+        .article-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--bleu-ciel-fonce);
+        }
+
+        .article-card p {
+            line-height: 1.6;
+            color: var(--texte);
+            margin-bottom: 15px;
+        }
+
+        .article-card a {
+            color: var(--bleu-ciel-fonce);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .article-card a i {
+            margin-left: 5px;
+            transition: transform 0.3s;
+        }
+
+        .article-card a:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Section Commentaires */
+        .comments {
+            padding: 80px 0;
+            background-color: var(--bleu-ciel-clair);
+        }
+
+        .comment-form {
+            background-color: var(--blanc);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--argent-fonce);
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--bleu-ciel);
+            outline: none;
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .comments-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .comment {
+            background-color: var(--blanc);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .comment-author {
+            font-weight: 600;
+            color: var(--bleu-ciel-fonce);
+        }
+
+        .comment-date {
+            color: var(--argent-fonce);
+            font-size: 0.9rem;
+        }
+
+        .comment-text {
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bleu-ciel-fonce);
+            color: var(--blanc);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 40px;
+            height: 2px;
+            background-color: var(--bleu-ciel);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--argente);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--blanc);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--blanc);
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--bleu-ciel);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: var(--argente);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .author-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-pen-fancy"></i>
+                    <span>Réflexions Éphémères</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#articles">Articles</a></li>
+                    <li><a href="#apropos">À propos</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Section Hero -->
+    <section class="hero" id="accueil">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Bientôt je disparaîtrai pour toujours, mais ce n'est pas grave tant que quelqu'un lit ceci</h1>
+                <p>Une réflexion profonde sur la vie, la mort et le sens de notre existence</p>
+                <a href="#article" class="btn">Lire l'article</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Article -->
+    <section class="article" id="article">
+        <div class="container">
+            <div class="article-content">
+                <div class="article-meta">
+                    <span><i class="far fa-user"></i> Auteur Anonyme</span>
+                    <span><i class="far fa-calendar"></i> 15 mars 2023</span>
+                    <span><i class="far fa-clock"></i> Temps de lecture: 8 min</span>
+                </div>
+                
+                <div class="article-text">
+                    <p>Je n'ai que 24 ans, et pourtant j'ai déjà choisi ma dernière cravate. C'est celle que je porterai à mes funérailles dans quelques mois. Elle ne sera peut-être pas assortie à mon costume, mais je la trouve parfaite pour l'occasion.</p>
+                    
+                    <p>Le diagnostic de cancer est arrivé trop tard pour me donner ne serait-ce qu'un mince espoir de longue vie, mais j'ai compris que le plus important face à la mort est de s'assurer que l'on laisse ce monde un peu meilleur qu'on ne l'était avant notre existence, grâce à notre contribution. La façon dont j'ai vécu jusqu'à présent, mon existence, ou plus précisément sa disparition, n'aura aucune importance car j'aurai vécu sans rien accomplir de significatif.</p>
+                    
+                    <div class="highlight">
+                        "Avant, tant de choses m'occupaient l'esprit. Mais quand j'ai réalisé le peu de temps qu'il me restait, j'ai compris ce qui comptait vraiment."
+                    </div>
+                    
+                    <p>Alors, je vous écris pour une raison un peu égoïste : je veux donner un sens à ma vie en partageant avec vous ce que j'ai compris. Ne perdez pas votre temps avec un travail qui ne vous plaît pas. Il est évident que vous ne pouvez pas réussir dans quelque chose qui ne vous intéresse pas. La patience, la passion et le dévouement viennent naturellement lorsque l'on aime ce que l'on fait. C'est absurde d'avoir peur du regard des autres. La peur vous affaiblit et vous paralyse. Si vous la laissez faire, elle ne fera qu'empirer jour après jour, jusqu'à ce qu'il ne reste plus de vous qu'une coquille vide. Écoutez votre intuition et suivez-la. Certains vous prendront peut-être pour un fou, d'autres vous considéreront comme une légende.</p>
+                    
+                    <p>Reprenez votre vie en main. Assumez pleinement la responsabilité de ce qui vous arrive. Limitez les mauvaises habitudes et essayez d'adopter un mode de vie plus sain. Trouvez un sport qui vous passionne. Surtout, n'attendez pas. Laissez votre vie être façonnée par vos décisions, et non par celles que vous n'avez pas prises. Chérissez les personnes qui vous entourent. Vos amis et vos proches seront toujours une source inépuisable de force et d'amour. C'est pourquoi vous ne devez pas les considérer comme acquis.</p>
+                    
+                    <p>Il m'est difficile d'exprimer pleinement ce que je ressens quant à l'importance de ces simples constats, mais j'espère que vous écouterez quelqu'un qui a fait l'expérience de la valeur inestimable du temps. Je ne suis pas triste car je comprends que les derniers jours de ma vie ont pris tout leur sens. Je regrette seulement de ne pas pouvoir assister à toutes ces choses extraordinaires qui devraient se produire prochainement, comme la création de l'IA ou le prochain projet génial d'Elon Musk. J'espère aussi que la guerre en Syrie et en Ukraine prendra bientôt fin.</p>
+                    
+                    <p>Nous accordons tellement d'importance à la santé et à l'intégrité de notre corps que, jusqu'à la mort, nous ne réalisons pas qu'il n'est rien de plus qu'une enveloppe, un réceptacle destiné à livrer au monde notre personnalité, nos pensées, nos croyances et nos intentions. Si cette enveloppe ne contient rien qui puisse changer le monde, sa disparition n'a aucune importance. Je crois que nous avons tous du potentiel, mais il faut aussi beaucoup de courage pour le réaliser.</p>
+                    
+                    <p>Vous pouvez traverser une vie dictée par les circonstances, en ratant jour après jour, heure après heure. Ou bien, vous pouvez vous battre pour vos convictions et écrire la grande histoire de votre vie. J'espère que vous ferez le bon choix. Laissez votre empreinte sur cette planète. Vivez une vie riche de sens, quelle que soit sa définition. Poursuivez-la. Le monde que nous quittons est un magnifique terrain de jeu où tout est possible. Pourtant, notre passage sur Terre est éphémère. Notre vie est une brève étincelle sur cette belle petite planète qui file à une vitesse incroyable vers l'immensité obscure de l'univers inconnu. Alors, vivez pleinement votre temps ici-bas. Rendez-le passionnant. Faites-en un moment inoubliable !</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section À propos de l'auteur -->
+    <section class="about-author">
+        <div class="container">
+            <div class="author-content">
+                <div class="author-image">
+                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80" alt="Auteur">
+                </div>
+                <div class="author-info">
+                    <h3>À propos de l'auteur</h3>
+                    <p>Cet article a été écrit par un jeune homme de 24 ans souhaitant partager ses réflexions sur la vie face à un diagnostic terminal. Il a choisi de rester anonyme pour que le message soit au centre de l'attention, plutôt que sa personne.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Articles similaires -->
+    <section class="related-articles">
+        <div class="container">
+            <div class="section-title">
+                <h2>Articles similaires</h2>
+                <p>Découvrez d'autres réflexions inspirantes</p>
+            </div>
+            <div class="articles-grid">
+                <div class="article-card">
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Article 1">
+                    <div class="article-card-content">
+                        <h3>L'art de vivre pleinement</h3>
+                        <p>Comment trouver du sens dans chaque instant et transformer notre quotidien.</p>
+                        <a href="#">Lire la suite <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="article-card">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Article 2">
+                    <div class="article-card-content">
+                        <h3>Surmonter ses peurs</h3>
+                        <p>Des stratégies pour affronter l'anxiété et reprendre le contrôle de sa vie.</p>
+                        <a href="#">Lire la suite <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="article-card">
+                    <img src="https://images.unsplash.com/photo-1543332164-6e82f355badc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Article 3">
+                    <div class="article-card-content">
+                        <h3>Le pouvoir des petites habitudes</h3>
+                        <p>Comment de petits changements peuvent transformer radicalement votre vie.</p>
+                        <a href="#">Lire la suite <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Commentaires -->
+    <section class="comments">
+        <div class="container">
+            <div class="section-title">
+                <h2>Commentaires</h2>
+                <p>Partagez vos réflexions</p>
+            </div>
+            
+            <div class="comment-form">
+                <h3>Laisser un commentaire</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Nom</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment">Commentaire</label>
+                        <textarea id="comment" class="form-control" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Publier le commentaire</button>
+                </form>
+            </div>
+            
+            <div class="comments-list">
+                <div class="comment">
+                    <div class="comment-header">
+                        <span class="comment-author">Marie L.</span>
+                        <span class="comment-date">16 mars 2023</span>
+                    </div>
+                    <div class="comment-text">
+                        Cet article m'a profondément touchée. Merci d'avoir partagé ces réflexions si précieuses. Cela me rappelle l'importance de vivre chaque jour pleinement.
+                    </div>
+                </div>
+                
+                <div class="comment">
+                    <div class="comment-header">
+                        <span class="comment-author">Thomas P.</span>
+                        <span class="comment-date">15 mars 2023</span>
+                    </div>
+                    <div class="comment-text">
+                        Un message poignant et rempli de sagesse. Cela m'a fait réfléchir à mes propres priorités dans la vie. Merci pour ce partage.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Réflexions Éphémères</h3>
+                    <p>Un blog dédié aux réflexions profondes sur la vie, l'existence et le sens que nous donnons à notre passage sur Terre.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Navigation</h3>
+                    <ul class="footer-links">
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#articles">Articles</a></li>
+                        <li><a href="#apropos">À propos</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Catégories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Réflexions</a></li>
+                        <li><a href="#">Développement personnel</a></li>
+                        <li><a href="#">Philosophie</a></li>
+                        <li><a href="#">Inspirations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Abonnez-vous pour recevoir nos dernières réflexions.</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Votre email" required>
+                        </div>
+                        <button type="submit" class="btn">S'abonner</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Réflexions Éphémères. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animation au défilement
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observer les éléments à animer
+            const elementsToAnimate = document.querySelectorAll('.article-card, .comment, .author-content');
+            
+            elementsToAnimate.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
