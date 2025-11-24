@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bientôt je disparaîtrai pour toujours</title>
+    <title>Get Your Gift Card Free</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bleu-ciel: #87CEEB;
-            --bleu-ciel-clair: #E0F7FF;
-            --bleu-ciel-fonce: #5AA9D6;
-            --argente: #F0F0F0;
-            --argent-fonce: #C0C0C0;
-            --texte: #333333;
-            --blanc: #FFFFFF;
-            --gris-lecture: #f8f9fa;
+            --white: #ffffff;
+            --blue: #1a73e8;
+            --sky-blue: #87ceeb;
+            --orange: #ff9800;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333333;
         }
 
         * {
@@ -25,278 +23,487 @@
         }
 
         body {
-            background-color: var(--bleu-ciel-clair);
-            color: var(--texte);
-            overflow-x: hidden;
+            background-color: var(--light-gray);
+            color: var(--dark-gray);
             line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--blue), var(--sky-blue));
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .container {
             max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+            margin: 2rem auto;
+            padding: 0 1rem;
         }
 
-        /* Section Hero avec image de fond optimisée */
-        .hero {
-            background: 
-                linear-gradient(rgba(20, 30, 48, 0.7), rgba(36, 59, 85, 0.7)), 
-                url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
-            height: 70vh;
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-image {
+            height: 180px;
             display: flex;
             align-items: center;
-            text-align: center;
-            color: var(--blanc);
-            position: relative;
-            overflow: hidden;
+            justify-content: center;
+            padding: 1rem;
+            background-color: var(--light-gray);
         }
 
-        .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-            animation: fadeInUp 1s ease-out;
-            padding: 0 20px;
+        .card-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .card-content {
+            padding: 1.2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-            line-height: 1.2;
-            font-weight: 700;
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark-gray);
         }
 
-        .hero p {
-            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-            margin-bottom: 30px;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Section Article avec fond gris */
-        .article {
-            padding: 80px 0;
-            background-color: var(--gris-lecture);
-        }
-
-        .article-content {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: var(--blanc);
-            padding: 50px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        .article-meta {
+        .card-actions {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 40px;
-            color: var(--argent-fonce);
-            font-size: 0.9rem;
-            border-bottom: 1px solid var(--argente);
-            padding-bottom: 20px;
-        }
-
-        .article-text {
-            line-height: 1.8;
-            font-size: 1.1rem;
-        }
-
-        .article-text p {
-            margin-bottom: 30px;
-            text-align: justify;
-        }
-
-        .highlight {
-            background-color: var(--bleu-ciel-clair);
-            padding: 30px;
-            border-left: 4px solid var(--bleu-ciel-fonce);
-            margin: 40px 0;
-            font-style: italic;
-            font-size: 1.2rem;
-            border-radius: 0 8px 8px 0;
-        }
-
-        /* Section À propos de l'auteur */
-        .about-author {
-            padding: 80px 0;
-            background-color: var(--blanc);
-        }
-
-        .author-content {
-            display: flex;
             align-items: center;
-            gap: 40px;
-            max-width: 800px;
-            margin: 0 auto;
+            margin-top: auto;
         }
 
-        .author-image {
-            width: 150px;
-            height: 150px;
+        .btn {
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--blue);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #0d5bb9;
+            transform: scale(1.05);
+        }
+
+        .btn-icon {
+            background-color: transparent;
+            color: var(--blue);
+            font-size: 1.2rem;
+            padding: 0.5rem;
             border-radius: 50%;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            flex-shrink: 0;
+            transition: all 0.3s ease;
         }
 
-        .author-image img {
+        .btn-icon:hover {
+            background-color: rgba(26, 115, 232, 0.1);
+            transform: scale(1.1);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
         }
 
-        .author-info h3 {
-            font-size: 1.8rem;
-            color: var(--bleu-ciel-fonce);
-            margin-bottom: 10px;
+        .modal-content {
+            background-color: var(--white);
+            border-radius: 10px;
+            max-width: 800px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            position: relative;
         }
 
-        .author-info p {
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--dark-gray);
+        }
+
+        .modal-body {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+
+        .modal-image {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-image img {
+            max-width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+        }
+
+        .modal-details {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--dark-gray);
+        }
+
+        .modal-value {
+            font-size: 1.2rem;
+            color: var(--blue);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .modal-description {
+            margin-bottom: 1.5rem;
             line-height: 1.6;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero {
-                height: 60vh;
-            }
-            
-            .article-content {
-                padding: 30px 20px;
-            }
-            
-            .article-meta {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .author-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .author-image {
-                width: 120px;
-                height: 120px;
+        .modal-actions {
+            margin-top: auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Pagination Styles */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+            gap: 0.5rem;
+        }
+
+        .pagination button {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            background-color: var(--white);
+            color: var(--dark-gray);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .pagination button.active {
+            background-color: var(--blue);
+            color: var(--white);
+        }
+
+        .pagination button:hover:not(.active) {
+            background-color: var(--sky-blue);
+            color: var(--white);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .cards-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
-        @media (max-width: 480px) {
-            .hero {
-                height: 50vh;
+        @media (max-width: 768px) {
+            .cards-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
             
-            .article {
-                padding: 50px 0;
+            .modal-body {
+                flex-direction: column;
             }
+        }
+
+        @media (max-width: 576px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            header p {
+                font-size: 1rem;
+            }
+        }
+
+        footer {
+            background-color: var(--dark-gray);
+            color: var(--white);
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
         }
     </style>
 </head>
 <body>
-    <!-- Section Hero -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Bientôt je disparaîtrai pour toujours, mais ce n'est pas grave tant que quelqu'un lit ceci</h1>
-                <p>Une réflexion profonde sur la vie, la mort et le sens de notre existence</p>
-            </div>
-        </div>
-    </section>
-<script async="async" data-cfasync="false" src="//financialwagerepel.com/5b9a0fe9deb44300da1d3b90f0db5db7/invoke.js"></script>
-<div id="container-5b9a0fe9deb44300da1d3b90f0db5db7"></div>
-    <!-- Section Article -->
-    <section class="article">
-        <div class="container">
-            <div class="article-content">
-                <div class="article-meta">
-                    <span><i class="far fa-user"></i> Auteur Anonyme</span>
-                    <span><i class="far fa-calendar"></i> 15 mars 2023</span>
-                    <span><i class="far fa-clock"></i> Temps de lecture: 8 min</span>
-                </div>
-                <script async="async" data-cfasync="false" src="//financialwagerepel.com/5b9a0fe9deb44300da1d3b90f0db5db7/invoke.js"></script>
-<div id="container-5b9a0fe9deb44300da1d3b90f0db5db7"></div>
-                <div class="article-text">
-                    <p>Je n'ai que 24 ans, et pourtant j'ai déjà choisi ma dernière cravate. C'est celle que je porterai à mes funérailles dans quelques mois. Elle ne sera peut-être pas assortie à mon costume, mais je la trouve parfaite pour l'occasion.</p>
-                    
-                    <p>Le diagnostic de cancer est arrivé trop tard pour me donner ne serait-ce qu'un mince espoir de longue vie, mais j'ai compris que le plus important face à la mort est de s'assurer que l'on laisse ce monde un peu meilleur qu'on ne l'était avant notre existence, grâce à notre contribution. La façon dont j'ai vécu jusqu'à présent, mon existence, ou plus précisément sa disparition, n'aura aucune importance car j'aurai vécu sans rien accomplir de significatif.</p>
-                    
-                    <div class="highlight">
-                        "Avant, tant de choses m'occupaient l'esprit. Mais quand j'ai réalisé le peu de temps qu'il me restait, j'ai compris ce qui comptait vraiment."
-                    </div>
-                    
-                    <p>Alors, je vous écris pour une raison un peu égoïste : je veux donner un sens à ma vie en partageant avec vous ce que j'ai compris. Ne perdez pas votre temps avec un travail qui ne vous plaît pas. Il est évident que vous ne pouvez pas réussir dans quelque chose qui ne vous intéresse pas. La patience, la passion et le dévouement viennent naturellement lorsque l'on aime ce que l'on fait. C'est absurde d'avoir peur du regard des autres. La peur vous affaiblit et vous paralyse. Si vous la laissez faire, elle ne fera qu'empirer jour après jour, jusqu'à ce qu'il ne reste plus de vous qu'une coquille vide. Écoutez votre intuition et suivez-la. Certains vous prendront peut-être pour un fou, d'autres vous considéreront comme une légende.</p>
-                    
-                    <p>Reprenez votre vie en main. Assumez pleinement la responsabilité de ce qui vous arrive. Limitez les mauvaises habitudes et essayez d'adopter un mode de vie plus sain. Trouvez un sport qui vous passionne. Surtout, n'attendez pas. Laissez votre vie être façonnée par vos décisions, et non par celles que vous n'avez pas prises. Chérissez les personnes qui vous entourent. Vos amis et vos proches seront toujours une source inépuisable de force et d'amour. C'est pourquoi vous ne devez pas les considérer comme acquis.</p>
-                    
-                    <p>Il m'est difficile d'exprimer pleinement ce que je ressens quant à l'importance de ces simples constats, mais j'espère que vous écouterez quelqu'un qui a fait l'expérience de la valeur inestimable du temps. Je ne suis pas triste car je comprends que les derniers jours de ma vie ont pris tout leur sens. Je regrette seulement de ne pas pouvoir assister à toutes ces choses extraordinaires qui devraient se produire prochainement, comme la création de l'IA ou le prochain projet génial d'Elon Musk. J'espère aussi que la guerre en Syrie et en Ukraine prendra bientôt fin.</p>
-                    
-                    <p>Nous accordons tellement d'importance à la santé et à l'intégrité de notre corps que, jusqu'à la mort, nous ne réalisons pas qu'il n'est rien de plus qu'une enveloppe, un réceptacle destiné à livrer au monde notre personnalité, nos pensées, nos croyances et nos intentions. Si cette enveloppe ne contient rien qui puisse changer le monde, sa disparition n'a aucune importance. Je crois que nous avons tous du potentiel, mais il faut aussi beaucoup de courage pour le réaliser.</p>
-                    
-                    <p>Vous pouvez traverser une vie dictée par les circonstances, en ratant jour après jour, heure après heure. Ou bien, vous pouvez vous battre pour vos convictions et écrire la grande histoire de votre vie. J'espère que vous ferez le bon choix. Laissez votre empreinte sur cette planète. Vivez une vie riche de sens, quelle que soit sa définition. Poursuivez-la. Le monde que nous quittons est un magnifique terrain de jeu où tout est possible. Pourtant, notre passage sur Terre est éphémère. Notre vie est une brève étincelle sur cette belle petite planète qui file à une vitesse incroyable vers l'immensité obscure de l'univers inconnu. Alors, vivez pleinement votre temps ici-bas. Rendez-le passionnant. Faites-en un moment inoubliable !</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <header>
+        <h1>Get Your Gift Card Free</h1>
+        <p>Découvrez notre sélection de cartes cadeaux gratuites pour Amazon, Netflix et iTunes</p>
+    </header>
 
-    <!-- Section À propos de l'auteur -->
-    <section class="about-author">
-        <div class="container">
-            <div class="author-content">
-                <div class="author-image">
-                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80" alt="Auteur">
+    <div class="container">
+        <div class="cards-grid" id="cardsContainer">
+            <!-- Les cartes seront générées dynamiquement avec JavaScript -->
+        </div>
+
+        <div class="pagination" id="pagination">
+            <!-- La pagination sera générée dynamiquement avec JavaScript -->
+        </div>
+    </div>
+
+    <!-- Modal pour afficher les détails d'une carte -->
+    <div class="modal" id="cardModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">&times;</button>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="Carte cadeau">
                 </div>
-                <div class="author-info">
-                    <h3>À propos de l'auteur</h3>
-                    <p>Cet article a été écrit par un jeune homme de 24 ans souhaitant partager ses réflexions sur la vie face à un diagnostic terminal. Il a choisi de rester anonyme pour que le message soit au centre de l'attention, plutôt que sa personne.</p>
+                <div class="modal-details">
+                    <h2 class="modal-title" id="modalTitle"></h2>
+                    <div class="modal-value" id="modalValue"></div>
+                    <p class="modal-description" id="modalDescription"></p>
+                    <div class="modal-actions">
+                        <button class="btn btn-primary" id="modalButton">Obtenir</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Get Your Gift Card Free. Tous droits réservés.</p>
+    </footer>
 
     <script>
-        // Animation au défilement
-        document.addEventListener('DOMContentLoaded', function() {
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-
-            // Observer les éléments à animer
-            const elementsToAnimate = document.querySelectorAll('.article-content, .author-content');
+        // Données des cartes cadeaux
+        const giftCards = [
+            // Amazon
+            { id: 1, type: 'Amazon', title: 'Amazon $1000 Gift Card (US)', value: '$1000', image: 'cadeau1.png', description: 'Carte cadeau Amazon d\'une valeur de 1000 USD. Utilisable sur tous les produits Amazon.com. Parfaite pour les gros achats ou comme cadeau exceptionnel.' },
+            { id: 2, type: 'Amazon', title: 'Amazon $500 Gift Card (US)', value: '$500', image: 'cadeau2.png', description: 'Carte cadeau Amazon d\'une valeur de 500 USD. Idéale pour faire plaisir ou pour vos propres achats sur la plateforme Amazon.' },
+            { id: 3, type: 'Amazon', title: 'Amazon $250 Gift Card (US)', value: '$250', image: 'cadeau3.png', description: 'Carte cadeau Amazon d\'une valeur de 250 USD. Un excellent moyen de découvrir une large gamme de produits sur Amazon.' },
+            { id: 4, type: 'Amazon', title: 'Amazon $100 Gift Card (US)', value: '$100', image: 'cadeau4.png', description: 'Carte cadeau Amazon d\'une valeur de 100 USD. Parfaite pour un cadeau ou pour compléter votre budget shopping.' },
+            { id: 5, type: 'Amazon', title: 'Amazon $50 Gift Card (US)', value: '$50', image: 'cadeau5.png', description: 'Carte cadeau Amazon d\'une valeur de 50 USD. Idéale pour un petit cadeau ou pour tester la plateforme Amazon.' },
+            { id: 6, type: 'Amazon', title: 'Amazon $25 Gift Card (US)', value: '$25', image: 'cadeau6.png', description: 'Carte cadeau Amazon d\'une valeur de 25 USD. Parfaite pour un petit plaisir ou un cadeau de dernière minute.' },
+            { id: 7, type: 'Amazon', title: 'Amazon $10 Gift Card (US)', value: '$10', image: 'cadeau7.png', description: 'Carte cadeau Amazon d\'une valeur de 10 USD. Idéale pour un petit achat ou pour compléter un budget.' },
+            { id: 8, type: 'Amazon', title: 'Amazon $5 Gift Card (US)', value: '$5', image: 'cadeau8.png', description: 'Carte cadeau Amazon d\'une valeur de 5 USD. Parfaite pour un tout petit achat ou pour tester le système de cartes cadeaux.' },
             
-            elementsToAnimate.forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(20px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(el);
+            // Netflix
+            { id: 9, type: 'Netflix', title: 'Netflix $100 Gift Card (US)', value: '$100', image: 'cadeau9.png', description: 'Carte cadeau Netflix d\'une valeur de 100 USD. Offre plusieurs mois d\'abonnement selon le forfait choisi.' },
+            { id: 10, type: 'Netflix', title: 'Netflix $50 Gift Card (US)', value: '$50', image: 'cadeau10.png', description: 'Carte cadeau Netflix d\'une valeur de 50 USD. Parfaite pour offrir plusieurs mois de divertissement en streaming.' },
+            { id: 11, type: 'Netflix', title: 'Netflix $25 Gift Card (US)', value: '$25', image: 'cadeau11.png', description: 'Carte cadeau Netflix d\'une valeur de 25 USD. Idéale pour un cadeau ou pour prolonger votre abonnement.' },
+            { id: 12, type: 'Netflix', title: 'Netflix $15 Gift Card (US)', value: '$15', image: 'cadeau12.png', description: 'Carte cadeau Netflix d\'une valeur de 15 USD. Parfaite pour un mois d\'abonnement ou en complément.' },
+            
+            // iTunes
+            { id: 13, type: 'iTunes', title: 'iTunes $100 Gift Card (US)', value: '$100', image: 'cadeau13.png', description: 'Carte cadeau iTunes d\'une valeur de 100 USD. Utilisable pour acheter de la musique, des films, des applications et plus encore.' },
+            { id: 14, type: 'iTunes', title: 'iTunes $50 Gift Card (US)', value: '$50', image: 'cadeau14.png', description: 'Carte cadeau iTunes d\'une valeur de 50 USD. Idéale pour faire le plein de divertissement numérique.' },
+            { id: 15, type: 'iTunes', title: 'iTunes $25 Gift Card (US)', value: '$25', image: 'cadeau15.png', description: 'Carte cadeau iTunes d\'une valeur de 25 USD. Parfaite pour découvrir l\'écosystème Apple ou offrir en cadeau.' },
+            { id: 16, type: 'iTunes', title: 'iTunes $15 Gift Card (US)', value: '$15', image: 'cadeau16.png', description: 'Carte cadeau iTunes d\'une valeur de 15 USD. Idéale pour un petit achat ou un complément de budget.' },
+            { id: 17, type: 'iTunes', title: 'iTunes $10 Gift Card (US)', value: '$10', image: 'cadeau17.png', description: 'Carte cadeau iTunes d\'une valeur de 10 USD. Parfaite pour acheter quelques applications ou chansons.' },
+            { id: 18, type: 'iTunes', title: 'iTunes $5 Gift Card (US)', value: '$5', image: 'cadeau18.png', description: 'Carte cadeau iTunes d\'une valeur de 5 USD. Idéale pour un petit achat ou pour tester le système.' },
+            
+            // Cartes supplémentaires pour compléter les 30
+            { id: 19, type: 'Amazon', title: 'Amazon $200 Gift Card (US)', value: '$200', image: 'cadeau19.png', description: 'Carte cadeau Amazon d\'une valeur de 200 USD. Excellente pour des achats moyens ou un cadeau généreux.' },
+            { id: 20, type: 'Netflix', title: 'Netflix $30 Gift Card (US)', value: '$30', image: 'cadeau20.png', description: 'Carte cadeau Netflix d\'une valeur de 30 USD. Parfaite pour deux mois d\'abonnement selon le forfait.' },
+            { id: 21, type: 'iTunes', title: 'iTunes $75 Gift Card (US)', value: '$75', image: 'cadeau21.png', description: 'Carte cadeau iTunes d\'une valeur de 75 USD. Idéale pour un budget de divertissement numérique conséquent.' },
+            { id: 22, type: 'Amazon', title: 'Amazon $75 Gift Card (US)', value: '$75', image: 'cadeau22.png', description: 'Carte cadeau Amazon d\'une valeur de 75 USD. Parfaite pour un cadeau ou pour vos propres achats.' },
+            { id: 23, type: 'Netflix', title: 'Netflix $75 Gift Card (US)', value: '$75', image: 'cadeau23.png', description: 'Carte cadeau Netflix d\'une valeur de 75 USD. Offre plusieurs mois d\'abonnement premium.' },
+            { id: 24, type: 'iTunes', title: 'iTunes $30 Gift Card (US)', value: '$30', image: 'cadeau24.png', description: 'Carte cadeau iTunes d\'une valeur de 30 USD. Excellente pour un mois d\'abonnement Apple Music et plus.' },
+            { id: 25, type: 'Amazon', title: 'Amazon $150 Gift Card (US)', value: '$150', image: 'cadeau25.png', description: 'Carte cadeau Amazon d\'une valeur de 150 USD. Idéale pour des achats moyens ou un cadeau.' },
+            { id: 26, type: 'Netflix', title: 'Netflix $40 Gift Card (US)', value: '$40', image: 'cadeau26.png', description: 'Carte cadeau Netflix d\'une valeur de 40 USD. Parfaite pour plusieurs mois d\'abonnement basique.' },
+            { id: 27, type: 'iTunes', title: 'iTunes $40 Gift Card (US)', value: '$40', image: 'cadeau27.png', description: 'Carte cadeau iTunes d\'une valeur de 40 USD. Idéale pour un budget de divertissement numérique.' },
+            { id: 28, type: 'Amazon', title: 'Amazon $20 Gift Card (US)', value: '$20', image: 'cadeau28.png', description: 'Carte cadeau Amazon d\'une valeur de 20 USD. Parfaite pour un petit cadeau ou un achat modeste.' },
+            { id: 29, type: 'Netflix', title: 'Netflix $20 Gift Card (US)', value: '$20', image: 'cadeau29.png', description: 'Carte cadeau Netflix d\'une valeur de 20 USD. Idéale pour un mois d\'abonnement ou en complément.' },
+            { id: 30, type: 'iTunes', title: 'iTunes $20 Gift Card (US)', value: '$20', image: 'cadeau30.png', description: 'Carte cadeau iTunes d\'une valeur de 20 USD. Parfaite pour un petit budget de divertissement numérique.' }
+        ];
+
+        // Variables pour la pagination
+        const cardsPerPage = 12;
+        let currentPage = 1;
+
+        // Éléments DOM
+        const cardsContainer = document.getElementById('cardsContainer');
+        const paginationContainer = document.getElementById('pagination');
+        const modal = document.getElementById('cardModal');
+        const closeModal = document.getElementById('closeModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalValue = document.getElementById('modalValue');
+        const modalDescription = document.getElementById('modalDescription');
+        const modalButton = document.getElementById('modalButton');
+
+        // Fonction pour afficher les cartes de la page actuelle
+        function displayCards() {
+            cardsContainer.innerHTML = '';
+            
+            const startIndex = (currentPage - 1) * cardsPerPage;
+            const endIndex = startIndex + cardsPerPage;
+            const cardsToShow = giftCards.slice(startIndex, endIndex);
+            
+            cardsToShow.forEach(card => {
+                const cardElement = document.createElement('div');
+                cardElement.className = 'card';
+                
+                cardElement.innerHTML = `
+                    <div class="card-image">
+                        <img src="${card.image}" alt="${card.title}">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">${card.title}</h3>
+                        <div class="card-actions">
+                            <button class="btn btn-primary" data-id="${card.id}">Obtenir</button>
+                            <button class="btn btn-icon view-details" data-id="${card.id}">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                cardsContainer.appendChild(cardElement);
             });
+            
+            // Ajouter les écouteurs d'événements pour les boutons "Obtenir"
+            document.querySelectorAll('.btn-primary').forEach(button => {
+                button.addEventListener('click', function() {
+                    const cardId = parseInt(this.getAttribute('data-id'));
+                    const card = giftCards.find(c => c.id === cardId);
+                    alert(`Vous avez sélectionné: ${card.title}`);
+                });
+            });
+            
+            // Ajouter les écouteurs d'événements pour les boutons "Voir détails"
+            document.querySelectorAll('.view-details').forEach(button => {
+                button.addEventListener('click', function() {
+                    const cardId = parseInt(this.getAttribute('data-id'));
+                    openModal(cardId);
+                });
+            });
+        }
+
+        // Fonction pour ouvrir le modal avec les détails de la carte
+        function openModal(cardId) {
+            const card = giftCards.find(c => c.id === cardId);
+            
+            modalImage.src = card.image;
+            modalImage.alt = card.title;
+            modalTitle.textContent = card.title;
+            modalValue.textContent = card.value;
+            modalDescription.textContent = card.description;
+            
+            modalButton.setAttribute('data-id', card.id);
+            
+            modal.style.display = 'flex';
+        }
+
+        // Fonction pour générer la pagination
+        function setupPagination() {
+            paginationContainer.innerHTML = '';
+            
+            const totalPages = Math.ceil(giftCards.length / cardsPerPage);
+            
+            for (let i = 1; i <= totalPages; i++) {
+                const button = document.createElement('button');
+                button.textContent = i;
+                button.className = i === currentPage ? 'active' : '';
+                
+                button.addEventListener('click', function() {
+                    currentPage = i;
+                    displayCards();
+                    setupPagination();
+                });
+                
+                paginationContainer.appendChild(button);
+            }
+        }
+
+        // Écouteur d'événement pour fermer le modal
+        closeModal.addEventListener('click', function() {
+            modal.style.display = 'none';
         });
+
+        // Écouteur d'événement pour le bouton "Obtenir" dans le modal
+        modalButton.addEventListener('click', function() {
+            const cardId = parseInt(this.getAttribute('data-id'));
+            const card = giftCards.find(c => c.id === cardId);
+            alert(`Vous avez sélectionné: ${card.title}`);
+            modal.style.display = 'none';
+        });
+
+        // Fermer le modal en cliquant en dehors
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Initialiser l'affichage
+        displayCards();
+        setupPagination();
     </script>
-    <script type='text/javascript' src='//financialwagerepel.com/cb/69/02/cb6902146d4a854a98a5f5f0f14c5e94.js'></script>
 </body>
 </html>
-
-
-
-
