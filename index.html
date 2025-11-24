@@ -809,6 +809,14 @@
             }
         ];
 
+        // Trier les cartes par valeur (décroissante)
+        giftCards.sort((a, b) => {
+            // Extraire la valeur numérique de la chaîne de valeur
+            const valueA = parseInt(a.value.replace('$', ''));
+            const valueB = parseInt(b.value.replace('$', ''));
+            return valueB - valueA;
+        });
+
         // Variables pour la pagination
         const cardsPerPage = 12;
         let currentPage = 1;
