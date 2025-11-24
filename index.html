@@ -15,9 +15,6 @@
             --dark-gray: #333333;
             --green: #4CAF50;
             --yellow: #FFC107;
-            --amazon-orange: #FF9900;
-            --netflix-red: #E50914;
-            --itunes-pink: #FB5BC5;
         }
 
         * {
@@ -58,41 +55,23 @@
             padding: 0 1rem;
         }
 
-        /* Guide visuel amélioré */
+        /* Guide visuel */
         .guide-container {
-            background: linear-gradient(135deg, #1a73e8 0%, #87ceeb 100%);
-            border-radius: 15px;
-            padding: 2rem;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 10px;
+            padding: 1.5rem;
             margin-bottom: 2rem;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             color: white;
             position: relative;
             overflow: hidden;
         }
 
-        .guide-container::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
-            animation: pulse 6s infinite alternate;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(0.8); opacity: 0.5; }
-            100% { transform: scale(1.2); opacity: 0.8; }
-        }
-
         .guide-title {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
             text-align: center;
             font-weight: 700;
-            position: relative;
-            z-index: 1;
         }
 
         .guide-steps {
@@ -100,117 +79,47 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            position: relative;
-            z-index: 1;
         }
 
         .guide-step {
             flex: 1;
             min-width: 200px;
             text-align: center;
-            padding: 1.5rem 1rem;
+            padding: 1rem;
             position: relative;
-            transition: transform 0.3s ease;
-        }
-
-        .guide-step:hover {
-            transform: translateY(-5px);
         }
 
         .step-number {
             display: inline-block;
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             background-color: white;
-            color: var(--blue);
+            color: #f5576c;
             border-radius: 50%;
-            line-height: 50px;
+            line-height: 40px;
             font-weight: bold;
-            margin-bottom: 0.8rem;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            margin-bottom: 0.5rem;
         }
 
         .step-icon {
-            font-size: 3rem;
-            margin-bottom: 0.8rem;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
             color: white;
-            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
         }
 
         .step-title {
-            font-weight: 700;
-            margin-bottom: 0.8rem;
-            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
         }
 
         .step-description {
-            font-size: 1rem;
-            opacity: 0.9;
+            font-size: 0.9rem;
         }
 
         .step-arrow {
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: white;
             margin: 0 1rem;
-            animation: slide 2s infinite;
-        }
-
-        @keyframes slide {
-            0%, 100% { transform: translateX(0); }
-            50% { transform: translateX(5px); }
-        }
-
-        /* Filtres par type de carte */
-        .filter-container {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .filter-btn {
-            padding: 0.7rem 1.5rem;
-            border: none;
-            border-radius: 30px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            background-color: var(--white);
-            color: var(--dark-gray);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .filter-btn.active, .filter-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-        }
-
-        .filter-btn.amazon.active {
-            background-color: var(--amazon-orange);
-            color: white;
-        }
-
-        .filter-btn.netflix.active {
-            background-color: var(--netflix-red);
-            color: white;
-        }
-
-        .filter-btn.itunes.active {
-            background-color: var(--itunes-pink);
-            color: white;
-        }
-
-        .filter-btn.all.active {
-            background-color: var(--blue);
-            color: white;
         }
 
         .cards-grid {
@@ -227,14 +136,13 @@
 
         .card {
             background-color: var(--white);
-            border-radius: 15px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
             animation: fadeIn 0.5s ease;
-            position: relative;
         }
 
         @keyframes fadeIn {
@@ -243,34 +151,8 @@
         }
 
         .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .card-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            padding: 0.3rem 0.7rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            z-index: 2;
-        }
-
-        .card-badge.amazon {
-            background-color: var(--amazon-orange);
-            color: white;
-        }
-
-        .card-badge.netflix {
-            background-color: var(--netflix-red);
-            color: white;
-        }
-
-        .card-badge.itunes {
-            background-color: var(--itunes-pink);
-            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
         }
 
         .card-image {
@@ -280,44 +162,16 @@
             justify-content: center;
             padding: 1rem;
             background-color: var(--light-gray);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card-image::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-        }
-
-        .card.amazon .card-image::after {
-            background: linear-gradient(90deg, var(--amazon-orange), #ffcc00);
-        }
-
-        .card.netflix .card-image::after {
-            background: linear-gradient(90deg, var(--netflix-red), #b81d24);
-        }
-
-        .card.itunes .card-image::after {
-            background: linear-gradient(90deg, var(--itunes-pink), #ff2d55);
         }
 
         .card-image img {
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover .card-image img {
-            transform: scale(1.05);
         }
 
         .card-content {
-            padding: 1.5rem;
+            padding: 1.2rem;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
@@ -330,26 +184,6 @@
             color: var(--dark-gray);
         }
 
-        .card-value {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 0.8rem;
-            color: var(--blue);
-        }
-
-        .card-offers {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-            color: var(--dark-gray);
-        }
-
-        .card-offers i {
-            margin-right: 0.5rem;
-            color: var(--green);
-        }
-
         .card-actions {
             display: flex;
             justify-content: space-between;
@@ -358,15 +192,12 @@
         }
 
         .btn {
-            padding: 0.7rem 1.2rem;
+            padding: 0.6rem 1.2rem;
             border: none;
-            border-radius: 8px;
+            border-radius: 5px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .btn-primary {
@@ -377,7 +208,6 @@
         .btn-primary:hover {
             background-color: #0d5bb9;
             transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .btn-icon {
@@ -406,13 +236,12 @@
             z-index: 1000;
             align-items: center;
             justify-content: center;
-            backdrop-filter: blur(5px);
         }
 
         .modal-content {
             background-color: var(--white);
-            border-radius: 15px;
-            max-width: 900px;
+            border-radius: 10px;
+            max-width: 800px;
             width: 90%;
             max-height: 90vh;
             overflow-y: auto;
@@ -421,7 +250,6 @@
             flex-direction: column;
             position: relative;
             animation: modalFadeIn 0.3s ease;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
         @keyframes modalFadeIn {
@@ -438,18 +266,6 @@
             border: none;
             cursor: pointer;
             color: var(--dark-gray);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .modal-close:hover {
-            background-color: rgba(0, 0, 0, 0.1);
-            transform: rotate(90deg);
         }
 
         .modal-body {
@@ -464,16 +280,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: var(--light-gray);
-            border-radius: 10px;
-            padding: 1rem;
         }
 
         .modal-image img {
             max-width: 100%;
             max-height: 300px;
             object-fit: contain;
-            border-radius: 8px;
         }
 
         .modal-details {
@@ -483,17 +295,17 @@
         }
 
         .modal-title {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
             color: var(--dark-gray);
         }
 
         .modal-value {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             color: var(--blue);
             margin-bottom: 1rem;
-            font-weight: 700;
+            font-weight: 600;
         }
 
         .modal-description {
@@ -504,46 +316,13 @@
         .offers-required {
             background-color: #e8f4fd;
             border-left: 4px solid var(--blue);
-            padding: 1rem;
+            padding: 0.8rem;
             margin-bottom: 1.5rem;
-            border-radius: 0 8px 8px 0;
-            display: flex;
-            align-items: center;
-        }
-
-        .offers-required i {
-            margin-right: 0.8rem;
-            font-size: 1.2rem;
-            color: var(--blue);
+            border-radius: 0 5px 5px 0;
         }
 
         .offers-required strong {
             color: var(--blue);
-        }
-
-        .modal-features {
-            margin-bottom: 1.5rem;
-        }
-
-        .modal-features h3 {
-            margin-bottom: 0.8rem;
-            color: var(--dark-gray);
-        }
-
-        .modal-features ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        .modal-features li {
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .modal-features li i {
-            margin-right: 0.5rem;
-            color: var(--green);
         }
 
         .modal-actions {
@@ -561,15 +340,13 @@
         }
 
         .pagination button {
-            padding: 0.7rem 1.2rem;
+            padding: 0.5rem 1rem;
             border: none;
-            border-radius: 8px;
+            border-radius: 5px;
             background-color: var(--white);
             color: var(--dark-gray);
             cursor: pointer;
             transition: all 0.3s ease;
-            font-weight: 600;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .pagination button.active {
@@ -580,7 +357,6 @@
         .pagination button:hover:not(.active) {
             background-color: var(--sky-blue);
             color: var(--white);
-            transform: translateY(-2px);
         }
 
         /* Responsive Styles */
@@ -620,10 +396,6 @@
             
             header p {
                 font-size: 1rem;
-            }
-            
-            .guide-step {
-                min-width: 100%;
             }
         }
 
@@ -671,21 +443,13 @@
                 </div>
                 <div class="guide-step">
                     <div class="step-icon">
-                        <i class="fas fa-gift"></i>
+                        <i class="fas fa-envelope"></i>
                     </div>
                     <div class="step-number">3</div>
                     <h3 class="step-title">Recevoir par email</h3>
                     <p class="step-description">Obtenez votre carte cadeau directement dans votre boîte mail</p>
                 </div>
             </div>
-        </div>
-
-        <!-- Filtres par type de carte -->
-        <div class="filter-container">
-            <button class="filter-btn all active" data-filter="all">Toutes les cartes</button>
-            <button class="filter-btn amazon" data-filter="Amazon">Amazon</button>
-            <button class="filter-btn netflix" data-filter="Netflix">Netflix</button>
-            <button class="filter-btn itunes" data-filter="iTunes">iTunes</button>
         </div>
 
         <div class="cards-grid" id="cardsContainer">
@@ -709,22 +473,11 @@
                     <h2 class="modal-title" id="modalTitle"></h2>
                     <div class="modal-value" id="modalValue"></div>
                     <p class="modal-description" id="modalDescription"></p>
-                    
-                    <div class="modal-features">
-                        <h3>Caractéristiques</h3>
-                        <ul id="modalFeatures">
-                            <!-- Les caractéristiques seront ajoutées dynamiquement -->
-                        </ul>
-                    </div>
-                    
                     <div class="offers-required" id="offersRequired">
-                        <i class="fas fa-clock"></i>
                         <!-- Le nombre d'offres à valider sera ajouté dynamiquement -->
                     </div>
                     <div class="modal-actions">
-                        <button class="btn btn-primary" id="modalButton">
-                            <i class="fas fa-gift"></i> Obtenir maintenant
-                        </button>
+                        <button class="btn btn-primary" id="modalButton">Obtenir</button>
                     </div>
                 </div>
             </div>
@@ -736,259 +489,50 @@
     </footer>
 
     <script>
-        // Données des cartes cadeaux avec de vraies images de haute qualité
+        // Données des cartes cadeaux
         const giftCards = [
             // Amazon
-            { 
-                id: 1, 
-                type: 'Amazon', 
-                title: 'Amazon $1000 Gift Card (US)', 
-                value: '$1000', 
-                image: 'https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80', 
-                description: 'Carte cadeau Amazon d\'une valeur de 1000 USD. Utilisable sur tous les produits Amazon.com. Parfaite pour les gros achats ou comme cadeau exceptionnel.', 
-                offersRequired: 2,
-                features: [
-                    "Utilisable sur tous les produits Amazon.com",
-                    "Aucune date d'expiration",
-                    "Livraison instantanée par email",
-                    "Idéale pour les gros achats"
-                ]
-            },
-            { 
-                id: 2, 
-                type: 'Amazon', 
-                title: 'Amazon $500 Gift Card (US)', 
-                value: '$500', 
-                image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80', 
-                description: 'Carte cadeau Amazon d\'une valeur de 500 USD. Idéale pour faire plaisir ou pour vos propres achats sur la plateforme Amazon.', 
-                offersRequired: 2,
-                features: [
-                    "Utilisable sur tous les produits Amazon.com",
-                    "Aucune date d'expiration",
-                    "Livraison instantanée par email",
-                    "Parfaite pour les cadeaux"
-                ]
-            },
-            { 
-                id: 3, 
-                type: 'Amazon', 
-                title: 'Amazon $250 Gift Card (US)', 
-                value: '$250', 
-                image: 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80', 
-                description: 'Carte cadeau Amazon d\'une valeur de 250 USD. Un excellent moyen de découvrir une large gamme de produits sur Amazon.', 
-                offersRequired: 1,
-                features: [
-                    "Utilisable sur tous les produits Amazon.com",
-                    "Aucune date d'expiration",
-                    "Livraison instantanée par email",
-                    "Idéale pour les achats moyens"
-                ]
-            },
-            { 
-                id: 4, 
-                type: 'Amazon', 
-                title: 'Amazon $100 Gift Card (US)', 
-                value: '$100', 
-                image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80', 
-                description: 'Carte cadeau Amazon d\'une valeur de 100 USD. Parfaite pour un cadeau ou pour compléter votre budget shopping.', 
-                offersRequired: 1,
-                features: [
-                    "Utilisable sur tous les produits Amazon.com",
-                    "Aucune date d'expiration",
-                    "Livraison instantanée par email",
-                    "Budget shopping idéal"
-                ]
-            },
-            { 
-                id: 5, 
-                type: 'Amazon', 
-                title: 'Amazon $50 Gift Card (US)', 
-                value: '$50', 
-                image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80', 
-                description: 'Carte cadeau Amazon d\'une valeur de 50 USD. Idéale pour un petit cadeau ou pour tester la plateforme Amazon.', 
-                offersRequired: 1,
-                features: [
-                    "Utilisable sur tous les produits Amazon.com",
-                    "Aucune date d'expiration",
-                    "Livraison instantanée par email",
-                    "Parfaite pour les petits cadeaux"
-                ]
-            },
-            { 
-                id: 6, 
-                type: 'Amazon', 
-                title: 'Amazon $25 Gift Card (US)', 
-                value: '$25', 
-                image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80', 
-                description: 'Carte cadeau Amazon d\'une valeur de 25 USD. Parfaite pour un petit plaisir ou un cadeau de dernière minute.', 
-                offersRequired: 1,
-                features: [
-                    "Utilisable sur tous les produits Amazon.com",
-                    "Aucune date d'expiration",
-                    "Livraison instantanée par email",
-                    "Cadeau de dernière minute"
-                ]
-            },
+            { id: 1, type: 'Amazon', title: 'Amazon $1000 Gift Card (US)', value: '$1000', image: 'cadeau1.png', description: 'Carte cadeau Amazon d\'une valeur de 1000 USD. Utilisable sur tous les produits Amazon.com. Parfaite pour les gros achats ou comme cadeau exceptionnel.', offersRequired: 2 },
+            { id: 2, type: 'Amazon', title: 'Amazon $500 Gift Card (US)', value: '$500', image: 'cadeau2.png', description: 'Carte cadeau Amazon d\'une valeur de 500 USD. Idéale pour faire plaisir ou pour vos propres achats sur la plateforme Amazon.', offersRequired: 2 },
+            { id: 3, type: 'Amazon', title: 'Amazon $250 Gift Card (US)', value: '$250', image: 'cadeau3.png', description: 'Carte cadeau Amazon d\'une valeur de 250 USD. Un excellent moyen de découvrir une large gamme de produits sur Amazon.', offersRequired: 1 },
+            { id: 4, type: 'Amazon', title: 'Amazon $100 Gift Card (US)', value: '$100', image: 'cadeau4.png', description: 'Carte cadeau Amazon d\'une valeur de 100 USD. Parfaite pour un cadeau ou pour compléter votre budget shopping.', offersRequired: 1 },
+            { id: 5, type: 'Amazon', title: 'Amazon $50 Gift Card (US)', value: '$50', image: 'cadeau5.png', description: 'Carte cadeau Amazon d\'une valeur de 50 USD. Idéale pour un petit cadeau ou pour tester la plateforme Amazon.', offersRequired: 1 },
+            { id: 6, type: 'Amazon', title: 'Amazon $25 Gift Card (US)', value: '$25', image: 'cadeau6.png', description: 'Carte cadeau Amazon d\'une valeur de 25 USD. Parfaite pour un petit plaisir ou un cadeau de dernière minute.', offersRequired: 1 },
+            { id: 7, type: 'Amazon', title: 'Amazon $10 Gift Card (US)', value: '$10', image: 'cadeau7.png', description: 'Carte cadeau Amazon d\'une valeur de 10 USD. Idéale pour un petit achat ou pour compléter un budget.', offersRequired: 1 },
+            { id: 8, type: 'Amazon', title: 'Amazon $5 Gift Card (US)', value: '$5', image: 'cadeau8.png', description: 'Carte cadeau Amazon d\'une valeur de 5 USD. Parfaite pour un tout petit achat ou pour tester le système de cartes cadeaux.', offersRequired: 1 },
             
             // Netflix
-            { 
-                id: 7, 
-                type: 'Netflix', 
-                title: 'Netflix $100 Gift Card (US)', 
-                value: '$100', 
-                image: 'https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80', 
-                description: 'Carte cadeau Netflix d\'une valeur de 100 USD. Offre plusieurs mois d\'abonnement selon le forfait choisi.', 
-                offersRequired: 1,
-                features: [
-                    "Utilisable pour tous les forfaits Netflix",
-                    "Accès à des milliers de films et séries",
-                    "Sans engagement",
-                    "Idéale pour offrir"
-                ]
-            },
-            { 
-                id: 8, 
-                type: 'Netflix', 
-                title: 'Netflix $50 Gift Card (US)', 
-                value: '$50', 
-                image: 'https://images.unsplash.com/photo-1522864007340-2c0e4755cda8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80', 
-                description: 'Carte cadeau Netflix d\'une valeur de 50 USD. Parfaite pour offrir plusieurs mois de divertissement en streaming.', 
-                offersRequired: 1,
-                features: [
-                    "Utilisable pour tous les forfaits Netflix",
-                    "Accès à des milliers de films et séries",
-                    "Sans engagement",
-                    "Plusieurs mois d'abonnement"
-                ]
-            },
-            { 
-                id: 9, 
-                type: 'Netflix', 
-                title: 'Netflix $25 Gift Card (US)', 
-                value: '$25', 
-                image: 'https://images.unsplash.com/photo-1489599809505-f2d4fbc4e35c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80', 
-                description: 'Carte cadeau Netflix d\'une valeur de 25 USD. Idéale pour un cadeau ou pour prolonger votre abonnement.', 
-                offersRequired: 1,
-                features: [
-                    "Utilisable pour tous les forfaits Netflix",
-                    "Accès à des milliers de films et séries",
-                    "Sans engagement",
-                    "Parfaite pour prolonger l'abonnement"
-                ]
-            },
-            { 
-                id: 10, 
-                type: 'Netflix', 
-                title: 'Netflix $15 Gift Card (US)', 
-                value: '$15', 
-                image: 'https://images.unsplash.com/photo-1478720568477-b2709ad0a17a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80', 
-                description: 'Carte cadeau Netflix d\'une valeur de 15 USD. Parfaite pour un mois d\'abonnement ou en complément.', 
-                offersRequired: 1,
-                features: [
-                    "Utilisable pour tous les forfaits Netflix",
-                    "Accès à des milliers de films et séries",
-                    "Sans engagement",
-                    "Un mois d'abonnement"
-                ]
-            },
+            { id: 9, type: 'Netflix', title: 'Netflix $100 Gift Card (US)', value: '$100', image: 'cadeau9.png', description: 'Carte cadeau Netflix d\'une valeur de 100 USD. Offre plusieurs mois d\'abonnement selon le forfait choisi.', offersRequired: 1 },
+            { id: 10, type: 'Netflix', title: 'Netflix $50 Gift Card (US)', value: '$50', image: 'cadeau10.png', description: 'Carte cadeau Netflix d\'une valeur de 50 USD. Parfaite pour offrir plusieurs mois de divertissement en streaming.', offersRequired: 1 },
+            { id: 11, type: 'Netflix', title: 'Netflix $25 Gift Card (US)', value: '$25', image: 'cadeau11.png', description: 'Carte cadeau Netflix d\'une valeur de 25 USD. Idéale pour un cadeau ou pour prolonger votre abonnement.', offersRequired: 1 },
+            { id: 12, type: 'Netflix', title: 'Netflix $15 Gift Card (US)', value: '$15', image: 'cadeau12.png', description: 'Carte cadeau Netflix d\'une valeur de 15 USD. Parfaite pour un mois d\'abonnement ou en complément.', offersRequired: 1 },
             
             // iTunes
-            { 
-                id: 11, 
-                type: 'iTunes', 
-                title: 'iTunes $100 Gift Card (US)', 
-                value: '$100', 
-                image: 'https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80', 
-                description: 'Carte cadeau iTunes d\'une valeur de 100 USD. Utilisable pour acheter de la musique, des films, des applications et plus encore.', 
-                offersRequired: 1,
-                features: [
-                    "Utilisable sur l'App Store, iTunes et Apple Music",
-                    "Achetez de la musique, des films et des apps",
-                    "Compatible avec tous les appareils Apple",
-                    "Grand budget de divertissement"
-                ]
-            },
-            { 
-                id: 12, 
-                type: 'iTunes', 
-                title: 'iTunes $50 Gift Card (US)', 
-                value: '$50', 
-                image: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80', 
-                description: 'Carte cadeau iTunes d\'une valeur de 50 USD. Idéale pour faire le plein de divertissement numérique.', 
-                offersRequired: 1,
-                features: [
-                    "Utilisable sur l'App Store, iTunes et Apple Music",
-                    "Achetez de la musique, des films et des apps",
-                    "Compatible avec tous les appareils Apple",
-                    "Budget de divertissement conséquent"
-                ]
-            },
-            { 
-                id: 13, 
-                type: 'iTunes', 
-                title: 'iTunes $25 Gift Card (US)', 
-                value: '$25', 
-                image: 'https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80', 
-                description: 'Carte cadeau iTunes d\'une valeur de 25 USD. Parfaite pour découvrir l\'écosystème Apple ou offrir en cadeau.', 
-                offersRequired: 1,
-                features: [
-                    "Utilisable sur l'App Store, iTunes et Apple Music",
-                    "Achetez de la musique, des films et des apps",
-                    "Compatible avec tous les appareils Apple",
-                    "Idéale pour découvrir Apple"
-                ]
-            },
-            { 
-                id: 14, 
-                type: 'iTunes', 
-                title: 'iTunes $15 Gift Card (US)', 
-                value: '$15', 
-                image: 'https://images.unsplash.com/photo-1593115057322-e94b77572f20?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80', 
-                description: 'Carte cadeau iTunes d\'une valeur de 15 USD. Idéale pour un petit achat ou un complément de budget.', 
-                offersRequired: 1,
-                features: [
-                    "Utilisable sur l'App Store, iTunes et Apple Music",
-                    "Achetez de la musique, des films et des apps",
-                    "Compatible avec tous les appareils Apple",
-                    "Petit budget de divertissement"
-                ]
-            },
-            { 
-                id: 15, 
-                type: 'iTunes', 
-                title: 'iTunes $10 Gift Card (US)', 
-                value: '$10', 
-                image: 'https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80', 
-                description: 'Carte cadeau iTunes d\'une valeur de 10 USD. Parfaite pour acheter quelques applications ou chansons.', 
-                offersRequired: 1,
-                features: [
-                    "Utilisable sur l'App Store, iTunes et Apple Music",
-                    "Achetez de la musique, des films et des apps",
-                    "Compatible avec tous les appareils Apple",
-                    "Quelques applications ou chansons"
-                ]
-            },
-            { 
-                id: 16, 
-                type: 'iTunes', 
-                title: 'iTunes $5 Gift Card (US)', 
-                value: '$5', 
-                image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80', 
-                description: 'Carte cadeau iTunes d\'une valeur de 5 USD. Idéale pour un petit achat ou pour tester le système.', 
-                offersRequired: 1,
-                features: [
-                    "Utilisable sur l'App Store, iTunes et Apple Music",
-                    "Achetez de la musique, des films et des apps",
-                    "Compatible avec tous les appareils Apple",
-                    "Test du système iTunes"
-                ]
-            }
+            { id: 13, type: 'iTunes', title: 'iTunes $100 Gift Card (US)', value: '$100', image: 'cadeau13.png', description: 'Carte cadeau iTunes d\'une valeur de 100 USD. Utilisable pour acheter de la musique, des films, des applications et plus encore.', offersRequired: 1 },
+            { id: 14, type: 'iTunes', title: 'iTunes $50 Gift Card (US)', value: '$50', image: 'cadeau14.png', description: 'Carte cadeau iTunes d\'une valeur de 50 USD. Idéale pour faire le plein de divertissement numérique.', offersRequired: 1 },
+            { id: 15, type: 'iTunes', title: 'iTunes $25 Gift Card (US)', value: '$25', image: 'cadeau15.png', description: 'Carte cadeau iTunes d\'une valeur de 25 USD. Parfaite pour découvrir l\'écosystème Apple ou offrir en cadeau.', offersRequired: 1 },
+            { id: 16, type: 'iTunes', title: 'iTunes $15 Gift Card (US)', value: '$15', image: 'cadeau16.png', description: 'Carte cadeau iTunes d\'une valeur de 15 USD. Idéale pour un petit achat ou un complément de budget.', offersRequired: 1 },
+            { id: 17, type: 'iTunes', title: 'iTunes $10 Gift Card (US)', value: '$10', image: 'cadeau17.png', description: 'Carte cadeau iTunes d\'une valeur de 10 USD. Parfaite pour acheter quelques applications ou chansons.', offersRequired: 1 },
+            { id: 18, type: 'iTunes', title: 'iTunes $5 Gift Card (US)', value: '$5', image: 'cadeau18.png', description: 'Carte cadeau iTunes d\'une valeur de 5 USD. Idéale pour un petit achat ou pour tester le système.', offersRequired: 1 },
+            
+            // Cartes supplémentaires pour compléter les 30
+            { id: 19, type: 'Amazon', title: 'Amazon $200 Gift Card (US)', value: '$200', image: 'cadeau19.png', description: 'Carte cadeau Amazon d\'une valeur de 200 USD. Excellente pour des achats moyens ou un cadeau généreux.', offersRequired: 1 },
+            { id: 20, type: 'Netflix', title: 'Netflix $30 Gift Card (US)', value: '$30', image: 'cadeau20.png', description: 'Carte cadeau Netflix d\'une valeur de 30 USD. Parfaite pour deux mois d\'abonnement selon le forfait.', offersRequired: 1 },
+            { id: 21, type: 'iTunes', title: 'iTunes $75 Gift Card (US)', value: '$75', image: 'cadeau21.png', description: 'Carte cadeau iTunes d\'une valeur de 75 USD. Idéale pour un budget de divertissement numérique conséquent.', offersRequired: 1 },
+            { id: 22, type: 'Amazon', title: 'Amazon $75 Gift Card (US)', value: '$75', image: 'cadeau22.png', description: 'Carte cadeau Amazon d\'une valeur de 75 USD. Parfaite pour un cadeau ou pour vos propres achats.', offersRequired: 1 },
+            { id: 23, type: 'Netflix', title: 'Netflix $75 Gift Card (US)', value: '$75', image: 'cadeau23.png', description: 'Carte cadeau Netflix d\'une valeur de 75 USD. Offre plusieurs mois d\'abonnement premium.', offersRequired: 1 },
+            { id: 24, type: 'iTunes', title: 'iTunes $30 Gift Card (US)', value: '$30', image: 'cadeau24.png', description: 'Carte cadeau iTunes d\'une valeur de 30 USD. Excellente pour un mois d\'abonnement Apple Music et plus.', offersRequired: 1 },
+            { id: 25, type: 'Amazon', title: 'Amazon $150 Gift Card (US)', value: '$150', image: 'cadeau25.png', description: 'Carte cadeau Amazon d\'une valeur de 150 USD. Idéale pour des achats moyens ou un cadeau.', offersRequired: 1 },
+            { id: 26, type: 'Netflix', title: 'Netflix $40 Gift Card (US)', value: '$40', image: 'cadeau26.png', description: 'Carte cadeau Netflix d\'une valeur de 40 USD. Parfaite pour plusieurs mois d\'abonnement basique.', offersRequired: 1 },
+            { id: 27, type: 'iTunes', title: 'iTunes $40 Gift Card (US)', value: '$40', image: 'cadeau27.png', description: 'Carte cadeau iTunes d\'une valeur de 40 USD. Idéale pour un budget de divertissement numérique.', offersRequired: 1 },
+            { id: 28, type: 'Amazon', title: 'Amazon $20 Gift Card (US)', value: '$20', image: 'cadeau28.png', description: 'Carte cadeau Amazon d\'une valeur de 20 USD. Parfaite pour un petit cadeau ou un achat modeste.', offersRequired: 1 },
+            { id: 29, type: 'Netflix', title: 'Netflix $20 Gift Card (US)', value: '$20', image: 'cadeau29.png', description: 'Carte cadeau Netflix d\'une valeur de 20 USD. Idéale pour un mois d\'abonnement ou en complément.', offersRequired: 1 },
+            { id: 30, type: 'iTunes', title: 'iTunes $20 Gift Card (US)', value: '$20', image: 'cadeau30.png', description: 'Carte cadeau iTunes d\'une valeur de 20 USD. Parfaite pour un petit budget de divertissement numérique.', offersRequired: 1 }
         ];
 
-        // Variables pour la pagination et le filtrage
+        // Variables pour la pagination
         const cardsPerPage = 12;
         let currentPage = 1;
-        let currentFilter = 'all';
 
         // Éléments DOM
         const cardsContainer = document.getElementById('cardsContainer');
@@ -999,36 +543,8 @@
         const modalTitle = document.getElementById('modalTitle');
         const modalValue = document.getElementById('modalValue');
         const modalDescription = document.getElementById('modalDescription');
-        const modalFeatures = document.getElementById('modalFeatures');
         const offersRequired = document.getElementById('offersRequired');
         const modalButton = document.getElementById('modalButton');
-        const filterButtons = document.querySelectorAll('.filter-btn');
-
-        // Fonction pour filtrer les cartes
-        function filterCards(type) {
-            currentFilter = type;
-            currentPage = 1;
-            displayCards();
-            setupPagination();
-            
-            // Mettre à jour les boutons de filtre actifs
-            filterButtons.forEach(btn => {
-                if (btn.getAttribute('data-filter') === type) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
-            });
-        }
-
-        // Fonction pour obtenir les cartes filtrées
-        function getFilteredCards() {
-            if (currentFilter === 'all') {
-                return giftCards;
-            } else {
-                return giftCards.filter(card => card.type === currentFilter);
-            }
-        }
 
         // Fonction pour afficher les cartes de la page actuelle
         function displayCards() {
@@ -1038,50 +554,31 @@
             setTimeout(() => {
                 cardsContainer.innerHTML = '';
                 
-                const filteredCards = getFilteredCards();
                 const startIndex = (currentPage - 1) * cardsPerPage;
                 const endIndex = startIndex + cardsPerPage;
-                const cardsToShow = filteredCards.slice(startIndex, endIndex);
+                const cardsToShow = giftCards.slice(startIndex, endIndex);
                 
-                if (cardsToShow.length === 0) {
-                    cardsContainer.innerHTML = `
-                        <div style="grid-column: 1 / -1; text-align: center; padding: 2rem;">
-                            <i class="fas fa-search" style="font-size: 3rem; color: #ccc; margin-bottom: 1rem;"></i>
-                            <h3 style="color: #666;">Aucune carte trouvée</h3>
-                            <p>Essayez de modifier vos filtres de recherche</p>
+                cardsToShow.forEach(card => {
+                    const cardElement = document.createElement('div');
+                    cardElement.className = 'card';
+                    
+                    cardElement.innerHTML = `
+                        <div class="card-image">
+                            <img src="${card.image}" alt="${card.title}">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">${card.title}</h3>
+                            <div class="card-actions">
+                                <button class="btn btn-primary" data-id="${card.id}">Obtenir</button>
+                                <button class="btn btn-icon view-details" data-id="${card.id}">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
                         </div>
                     `;
-                } else {
-                    cardsToShow.forEach(card => {
-                        const cardElement = document.createElement('div');
-                        cardElement.className = `card ${card.type.toLowerCase()}`;
-                        
-                        cardElement.innerHTML = `
-                            <div class="card-badge ${card.type.toLowerCase()}">${card.type}</div>
-                            <div class="card-image">
-                                <img src="${card.image}" alt="${card.title}" loading="lazy">
-                            </div>
-                            <div class="card-content">
-                                <h3 class="card-title">${card.title}</h3>
-                                <div class="card-value">${card.value}</div>
-                                <div class="card-offers">
-                                    <i class="fas fa-clock"></i>
-                                    ${card.offersRequired === 1 ? '1 offre de 10 secondes' : `${card.offersRequired} offres de 10 secondes`}
-                                </div>
-                                <div class="card-actions">
-                                    <button class="btn btn-primary" data-id="${card.id}">
-                                        <i class="fas fa-gift"></i> Obtenir
-                                    </button>
-                                    <button class="btn btn-icon view-details" data-id="${card.id}">
-                                        <i class="fas fa-eye"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        `;
-                        
-                        cardsContainer.appendChild(cardElement);
-                    });
-                }
+                    
+                    cardsContainer.appendChild(cardElement);
+                });
                 
                 // Retirer la classe de fondu
                 cardsContainer.classList.remove('fade-out');
@@ -1115,19 +612,11 @@
             modalValue.textContent = card.value;
             modalDescription.textContent = card.description;
             
-            // Afficher les caractéristiques
-            modalFeatures.innerHTML = '';
-            card.features.forEach(feature => {
-                const li = document.createElement('li');
-                li.innerHTML = `<i class="fas fa-check"></i> ${feature}`;
-                modalFeatures.appendChild(li);
-            });
-            
             // Afficher le nombre d'offres à valider
             if (card.offersRequired === 1) {
-                offersRequired.innerHTML = `<i class="fas fa-clock"></i> <strong>Offre à valider:</strong> 1 offre de 10 secondes`;
+                offersRequired.innerHTML = `<strong>Offre à valider:</strong> 1 offre de 10 secondes`;
             } else {
-                offersRequired.innerHTML = `<i class="fas fa-clock"></i> <strong>Offres à valider:</strong> ${card.offersRequired} offres de 10 secondes`;
+                offersRequired.innerHTML = `<strong>Offres à valider:</strong> ${card.offersRequired} offres de 10 secondes`;
             }
             
             modalButton.setAttribute('data-id', card.id);
@@ -1139,10 +628,7 @@
         function setupPagination() {
             paginationContainer.innerHTML = '';
             
-            const filteredCards = getFilteredCards();
-            const totalPages = Math.ceil(filteredCards.length / cardsPerPage);
-            
-            if (totalPages <= 1) return;
+            const totalPages = Math.ceil(giftCards.length / cardsPerPage);
             
             for (let i = 1; i <= totalPages; i++) {
                 const button = document.createElement('button');
@@ -1164,14 +650,6 @@
                 paginationContainer.appendChild(button);
             }
         }
-
-        // Écouteurs d'événements pour les boutons de filtre
-        filterButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const filterType = this.getAttribute('data-filter');
-                filterCards(filterType);
-            });
-        });
 
         // Écouteur d'événement pour fermer le modal
         closeModal.addEventListener('click', function() {
