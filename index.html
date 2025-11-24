@@ -11,12 +11,14 @@
             --blue: #1a73e8;
             --sky-blue: #87ceeb;
             --orange: #ff9800;
-            --light-gray: #f5f5f5;
-            --dark-gray: #333333;
+            --light-gray: #f8f9fa;
+            --dark-gray: #2c3e50;
             --green: #4CAF50;
             --yellow: #FFC107;
             --purple: #8A2BE2;
             --pink: #FF69B4;
+            --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            --hover-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
 
         * {
@@ -27,7 +29,7 @@
         }
 
         body {
-            background-color: var(--light-gray);
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
             color: var(--dark-gray);
             line-height: 1.6;
         }
@@ -36,7 +38,7 @@
             background: linear-gradient(135deg, var(--blue), var(--sky-blue));
             color: var(--white);
             text-align: center;
-            padding: 2rem 1rem;
+            padding: 2.5rem 1rem;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             position: relative;
             overflow: hidden;
@@ -58,6 +60,7 @@
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
             position: relative;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
 
         header p {
@@ -65,6 +68,7 @@
             max-width: 800px;
             margin: 0 auto;
             position: relative;
+            opacity: 0.9;
         }
 
         .container {
@@ -87,14 +91,15 @@
 
         .card {
             background-color: var(--white);
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--card-shadow);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
             animation: fadeIn 0.5s ease;
             position: relative;
+            border: 1px solid rgba(0,0,0,0.05);
         }
 
         .card::before {
@@ -125,8 +130,8 @@
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: var(--hover-shadow);
         }
 
         .card-image {
@@ -137,6 +142,7 @@
             padding: 1rem;
             background-color: var(--light-gray);
             position: relative;
+            overflow: hidden;
         }
 
         .card-image::after {
@@ -146,13 +152,18 @@
             left: 0;
             width: 100%;
             height: 3px;
-            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.05), transparent);
         }
 
         .card-image img {
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .card-image img {
+            transform: scale(1.05);
         }
 
         .card-content {
@@ -169,11 +180,31 @@
             color: var(--dark-gray);
         }
 
-        .card-description {
-            font-size: 0.9rem;
-            color: #666;
+        .card-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--blue);
             margin-bottom: 1rem;
-            flex-grow: 1;
+            background: linear-gradient(135deg, #e8f4fd, #f0f8ff);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            display: inline-block;
+            align-self: flex-start;
+        }
+
+        .card.amazon .card-value {
+            color: #FF9900;
+            background: linear-gradient(135deg, #fff8e1, #fff3e0);
+        }
+
+        .card.netflix .card-value {
+            color: #E50914;
+            background: linear-gradient(135deg, #ffebee, #fce4ec);
+        }
+
+        .card.itunes .card-value {
+            color: #8A2BE2;
+            background: linear-gradient(135deg, #f3e5f5, #f0e6ff);
         }
 
         .card-actions {
@@ -186,7 +217,7 @@
         .btn {
             padding: 0.6rem 1.2rem;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -196,19 +227,18 @@
         }
 
         .btn-primary {
-            background-color: var(--blue);
+            background: linear-gradient(135deg, var(--blue), #0d5bb9);
             color: var(--white);
             box-shadow: 0 2px 5px rgba(26, 115, 232, 0.3);
         }
 
         .btn-primary:hover {
-            background-color: #0d5bb9;
-            transform: scale(1.05);
+            transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(26, 115, 232, 0.4);
         }
 
         .btn-icon {
-            background-color: transparent;
+            background: linear-gradient(135deg, #f0f2f5, #e4e8ed);
             color: var(--blue);
             font-size: 1.2rem;
             padding: 0.5rem;
@@ -217,22 +247,26 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            width: 40px;
+            height: 40px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         .btn-icon:hover {
-            background-color: rgba(26, 115, 232, 0.1);
-            transform: scale(1.1);
+            background: linear-gradient(135deg, var(--blue), #0d5bb9);
+            color: white;
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 4px 8px rgba(26, 115, 232, 0.3);
         }
 
         .btn-gift {
-            background-color: var(--purple);
+            background: linear-gradient(135deg, var(--purple), #7a1fd2);
             color: white;
             box-shadow: 0 2px 5px rgba(138, 43, 226, 0.3);
         }
 
         .btn-gift:hover {
-            background-color: #7a1fd2;
-            transform: scale(1.05);
+            transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(138, 43, 226, 0.4);
         }
 
@@ -248,11 +282,12 @@
             z-index: 1000;
             align-items: center;
             justify-content: center;
+            backdrop-filter: blur(5px);
         }
 
         .modal-content {
             background-color: var(--white);
-            border-radius: 10px;
+            border-radius: 12px;
             max-width: 800px;
             width: 90%;
             max-height: 90vh;
@@ -262,12 +297,12 @@
             flex-direction: column;
             position: relative;
             animation: modalFadeIn 0.3s ease;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
 
         @keyframes modalFadeIn {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
+            from { opacity: 0; transform: scale(0.9) translateY(-20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
         }
 
         .modal-close {
@@ -275,7 +310,7 @@
             top: 1rem;
             right: 1rem;
             font-size: 1.5rem;
-            background: none;
+            background: rgba(0, 0, 0, 0.1);
             border: none;
             cursor: pointer;
             color: var(--dark-gray);
@@ -285,11 +320,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
         }
 
         .modal-close:hover {
-            background-color: rgba(0, 0, 0, 0.1);
+            background: rgba(0, 0, 0, 0.2);
+            transform: rotate(90deg);
         }
 
         .modal-body {
@@ -304,15 +340,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: var(--light-gray);
-            border-radius: 8px;
-            padding: 1rem;
+            background: linear-gradient(135deg, #f5f7fa, #e4edf5);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
         }
 
         .modal-image img {
             max-width: 100%;
             max-height: 300px;
             object-fit: contain;
+            border-radius: 8px;
         }
 
         .modal-details {
@@ -333,23 +371,24 @@
             color: var(--blue);
             margin-bottom: 1rem;
             font-weight: 600;
-            background-color: #e8f4fd;
+            background: linear-gradient(135deg, #e8f4fd, #f0f8ff);
             padding: 0.5rem 1rem;
-            border-radius: 5px;
+            border-radius: 8px;
             display: inline-block;
         }
 
         .modal-description {
             margin-bottom: 1.5rem;
             line-height: 1.6;
+            color: #555;
         }
 
         .offers-required {
-            background-color: #e8f4fd;
+            background: linear-gradient(135deg, #e8f4fd, #f0f8ff);
             border-left: 4px solid var(--blue);
             padding: 0.8rem;
             margin-bottom: 1.5rem;
-            border-radius: 0 5px 5px 0;
+            border-radius: 0 8px 8px 0;
         }
 
         .offers-required strong {
@@ -373,7 +412,7 @@
         .pagination button {
             padding: 0.5rem 1rem;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             background-color: var(--white);
             color: var(--dark-gray);
             cursor: pointer;
@@ -381,16 +420,18 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         .pagination button.active {
-            background-color: var(--blue);
+            background: linear-gradient(135deg, var(--blue), #0d5bb9);
             color: var(--white);
         }
 
         .pagination button:hover:not(.active) {
             background-color: var(--sky-blue);
             color: var(--white);
+            transform: translateY(-2px);
         }
 
         /* Responsive Styles */
@@ -422,10 +463,20 @@
             header p {
                 font-size: 1rem;
             }
+            
+            .card-actions {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
         }
 
         footer {
-            background-color: var(--dark-gray);
+            background: linear-gradient(135deg, var(--dark-gray), #1a252f);
             color: var(--white);
             text-align: center;
             padding: 1.5rem;
@@ -790,21 +841,16 @@
                     const cardElement = document.createElement('div');
                     cardElement.className = `card ${card.type.toLowerCase()}`;
                     
-                    // Description courte pour la carte
-                    const shortDescription = card.description.length > 100 
-                        ? card.description.substring(0, 100) + '...' 
-                        : card.description;
-                    
                     cardElement.innerHTML = `
                         <div class="card-image">
                             <img src="${card.image}" alt="${card.title}">
                         </div>
                         <div class="card-content">
                             <h3 class="card-title">${card.title}</h3>
-                            <p class="card-description">${shortDescription}</p>
+                            <div class="card-value">${card.value}</div>
                             <div class="card-actions">
                                 <button class="btn btn-primary" data-id="${card.id}"><i class="fas fa-gift"></i> Obtenir</button>
-                                <button class="btn btn-icon view-details" data-id="${card.id}">
+                                <button class="btn btn-icon view-details" data-id="${card.id}" title="Voir les détails">
                                     <i class="fas fa-eye"></i>
                                 </button>
                             </div>
