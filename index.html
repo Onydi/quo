@@ -15,6 +15,8 @@
             --dark-gray: #333333;
             --green: #4CAF50;
             --yellow: #FFC107;
+            --purple: #8A2BE2;
+            --pink: #FF69B4;
         }
 
         * {
@@ -36,90 +38,39 @@
             text-align: center;
             padding: 2rem 1rem;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%23ffffff' opacity='0.1' d='M50,0 L60,40 L100,50 L60,60 L50,100 L40,60 L0,50 L40,40 Z'/%3E%3C/svg%3E");
+            background-size: 100px;
+            opacity: 0.1;
         }
 
         header h1 {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
+            position: relative;
         }
 
         header p {
             font-size: 1.2rem;
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
         }
 
         .container {
             max-width: 1200px;
             margin: 2rem auto;
             padding: 0 1rem;
-        }
-
-        /* Guide visuel */
-        .guide-container {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            border-radius: 10px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .guide-title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            text-align: center;
-            font-weight: 700;
-        }
-
-        .guide-steps {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .guide-step {
-            flex: 1;
-            min-width: 200px;
-            text-align: center;
-            padding: 1rem;
-            position: relative;
-        }
-
-        .step-number {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background-color: white;
-            color: #f5576c;
-            border-radius: 50%;
-            line-height: 40px;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .step-icon {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            color: white;
-        }
-
-        .step-title {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .step-description {
-            font-size: 0.9rem;
-        }
-
-        .step-arrow {
-            font-size: 2rem;
-            color: white;
-            margin: 0 1rem;
         }
 
         .cards-grid {
@@ -143,6 +94,29 @@
             display: flex;
             flex-direction: column;
             animation: fadeIn 0.5s ease;
+            position: relative;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--blue), var(--sky-blue));
+        }
+
+        .card.amazon::before {
+            background: linear-gradient(90deg, #FF9900, #FFC107);
+        }
+
+        .card.netflix::before {
+            background: linear-gradient(90deg, #E50914, #B81D24);
+        }
+
+        .card.itunes::before {
+            background: linear-gradient(90deg, #FB5BC5, #8A2BE2);
         }
 
         @keyframes fadeIn {
@@ -162,6 +136,17 @@
             justify-content: center;
             padding: 1rem;
             background-color: var(--light-gray);
+            position: relative;
+        }
+
+        .card-image::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
         }
 
         .card-image img {
@@ -184,6 +169,13 @@
             color: var(--dark-gray);
         }
 
+        .card-description {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
         .card-actions {
             display: flex;
             justify-content: space-between;
@@ -198,16 +190,21 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .btn-primary {
             background-color: var(--blue);
             color: var(--white);
+            box-shadow: 0 2px 5px rgba(26, 115, 232, 0.3);
         }
 
         .btn-primary:hover {
             background-color: #0d5bb9;
             transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(26, 115, 232, 0.4);
         }
 
         .btn-icon {
@@ -217,11 +214,26 @@
             padding: 0.5rem;
             border-radius: 50%;
             transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .btn-icon:hover {
             background-color: rgba(26, 115, 232, 0.1);
             transform: scale(1.1);
+        }
+
+        .btn-gift {
+            background-color: var(--purple);
+            color: white;
+            box-shadow: 0 2px 5px rgba(138, 43, 226, 0.3);
+        }
+
+        .btn-gift:hover {
+            background-color: #7a1fd2;
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(138, 43, 226, 0.4);
         }
 
         /* Modal Styles */
@@ -250,6 +262,7 @@
             flex-direction: column;
             position: relative;
             animation: modalFadeIn 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
 
         @keyframes modalFadeIn {
@@ -266,6 +279,17 @@
             border: none;
             cursor: pointer;
             color: var(--dark-gray);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+
+        .modal-close:hover {
+            background-color: rgba(0, 0, 0, 0.1);
         }
 
         .modal-body {
@@ -280,6 +304,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            padding: 1rem;
         }
 
         .modal-image img {
@@ -306,6 +333,10 @@
             color: var(--blue);
             margin-bottom: 1rem;
             font-weight: 600;
+            background-color: #e8f4fd;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            display: inline-block;
         }
 
         .modal-description {
@@ -347,6 +378,9 @@
             color: var(--dark-gray);
             cursor: pointer;
             transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .pagination button.active {
@@ -363,15 +397,6 @@
         @media (max-width: 992px) {
             .cards-grid {
                 grid-template-columns: repeat(3, 1fr);
-            }
-            
-            .guide-steps {
-                flex-direction: column;
-            }
-            
-            .step-arrow {
-                transform: rotate(90deg);
-                margin: 0.5rem 0;
             }
         }
 
@@ -410,48 +435,11 @@
 </head>
 <body>
     <header>
-        <h1>Get Your Gift Card Free</h1>
-        <p>Découvrez notre sélection de cartes cadeaux gratuites pour Amazon, Netflix et iTunes</p>
+        <h1><i class="fas fa-gift"></i> Get Your Gift Card Free</h1>
+        <p>Découvrez notre sélection exclusive de cartes cadeaux gratuites pour Amazon, Netflix et iTunes</p>
     </header>
 
     <div class="container">
-        <!-- Guide visuel pour obtenir une carte cadeau -->
-        <div class="guide-container">
-            <h2 class="guide-title">Comment obtenir votre carte cadeau gratuitement</h2>
-            <div class="guide-steps">
-                <div class="guide-step">
-                    <div class="step-icon">
-                        <i class="fas fa-mouse-pointer"></i>
-                    </div>
-                    <div class="step-number">1</div>
-                    <h3 class="step-title">Cliquer sur Obtenir</h3>
-                    <p class="step-description">Sélectionnez la carte cadeau de votre choix</p>
-                </div>
-                <div class="step-arrow">
-                    <i class="fas fa-arrow-right"></i>
-                </div>
-                <div class="guide-step">
-                    <div class="step-icon">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <div class="step-number">2</div>
-                    <h3 class="step-title">Valider des offres</h3>
-                    <p class="step-description">Complétez une ou plusieurs offres de 10 secondes</p>
-                </div>
-                <div class="step-arrow">
-                    <i class="fas fa-arrow-right"></i>
-                </div>
-                <div class="guide-step">
-                    <div class="step-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div class="step-number">3</div>
-                    <h3 class="step-title">Recevoir par email</h3>
-                    <p class="step-description">Obtenez votre carte cadeau directement dans votre boîte mail</p>
-                </div>
-            </div>
-        </div>
-
         <div class="cards-grid" id="cardsContainer">
             <!-- Les cartes seront générées dynamiquement avec JavaScript -->
         </div>
@@ -477,7 +465,7 @@
                         <!-- Le nombre d'offres à valider sera ajouté dynamiquement -->
                     </div>
                     <div class="modal-actions">
-                        <button class="btn btn-primary" id="modalButton">Obtenir</button>
+                        <button class="btn btn-primary" id="modalButton"><i class="fas fa-gift"></i> Obtenir Maintenant</button>
                     </div>
                 </div>
             </div>
@@ -489,45 +477,285 @@
     </footer>
 
     <script>
-        // Données des cartes cadeaux
+        // Données des cartes cadeaux avec descriptions détaillées
         const giftCards = [
             // Amazon
-            { id: 1, type: 'Amazon', title: 'Amazon $1000 Gift Card (US)', value: '$1000', image: 'cadeau1.png', description: 'Carte cadeau Amazon d\'une valeur de 1000 USD. Utilisable sur tous les produits Amazon.com. Parfaite pour les gros achats ou comme cadeau exceptionnel.', offersRequired: 2 },
-            { id: 2, type: 'Amazon', title: 'Amazon $500 Gift Card (US)', value: '$500', image: 'cadeau2.png', description: 'Carte cadeau Amazon d\'une valeur de 500 USD. Idéale pour faire plaisir ou pour vos propres achats sur la plateforme Amazon.', offersRequired: 2 },
-            { id: 3, type: 'Amazon', title: 'Amazon $250 Gift Card (US)', value: '$250', image: 'cadeau3.png', description: 'Carte cadeau Amazon d\'une valeur de 250 USD. Un excellent moyen de découvrir une large gamme de produits sur Amazon.', offersRequired: 1 },
-            { id: 4, type: 'Amazon', title: 'Amazon $100 Gift Card (US)', value: '$100', image: 'cadeau4.png', description: 'Carte cadeau Amazon d\'une valeur de 100 USD. Parfaite pour un cadeau ou pour compléter votre budget shopping.', offersRequired: 1 },
-            { id: 5, type: 'Amazon', title: 'Amazon $50 Gift Card (US)', value: '$50', image: 'cadeau5.png', description: 'Carte cadeau Amazon d\'une valeur de 50 USD. Idéale pour un petit cadeau ou pour tester la plateforme Amazon.', offersRequired: 1 },
-            { id: 6, type: 'Amazon', title: 'Amazon $25 Gift Card (US)', value: '$25', image: 'cadeau6.png', description: 'Carte cadeau Amazon d\'une valeur de 25 USD. Parfaite pour un petit plaisir ou un cadeau de dernière minute.', offersRequired: 1 },
-            { id: 7, type: 'Amazon', title: 'Amazon $10 Gift Card (US)', value: '$10', image: 'cadeau7.png', description: 'Carte cadeau Amazon d\'une valeur de 10 USD. Idéale pour un petit achat ou pour compléter un budget.', offersRequired: 1 },
-            { id: 8, type: 'Amazon', title: 'Amazon $5 Gift Card (US)', value: '$5', image: 'cadeau8.png', description: 'Carte cadeau Amazon d\'une valeur de 5 USD. Parfaite pour un tout petit achat ou pour tester le système de cartes cadeaux.', offersRequired: 1 },
+            { 
+                id: 1, 
+                type: 'Amazon', 
+                title: 'Amazon $1000 Gift Card (US)', 
+                value: '$1000', 
+                image: 'cadeau1.png', 
+                description: 'Carte cadeau Amazon d\'une valeur de 1000 USD. Cette carte cadeau premium vous donne accès à des millions de produits sur Amazon.com, des appareils électroniques aux vêtements en passant par les articles ménagers. Parfaite pour les gros achats ou comme cadeau exceptionnel pour des occasions spéciales.', 
+                offersRequired: 2 
+            },
+            { 
+                id: 2, 
+                type: 'Amazon', 
+                title: 'Amazon $500 Gift Card (US)', 
+                value: '$500', 
+                image: 'cadeau2.png', 
+                description: 'Carte cadeau Amazon d\'une valeur de 500 USD. Une somme généreuse qui vous permettra de faire le plein de vos produits préférés ou d\'offrir un cadeau de grande valeur. Utilisable sur tous les produits éligibles d\'Amazon, y compris les livres, l\'électronique, les jeux vidéo et bien plus encore.', 
+                offersRequired: 2 
+            },
+            { 
+                id: 3, 
+                type: 'Amazon', 
+                title: 'Amazon $250 Gift Card (US)', 
+                value: '$250', 
+                image: 'cadeau3.png', 
+                description: 'Carte cadeau Amazon d\'une valeur de 250 USD. Un excellent moyen de découvrir la large gamme de produits disponibles sur Amazon ou de faire plaisir à un proche. Cette carte est parfaite pour les achats moyens comme les appareils électroniques, les vêtements de marque ou les articles de maison.', 
+                offersRequired: 1 
+            },
+            { 
+                id: 4, 
+                type: 'Amazon', 
+                title: 'Amazon $100 Gift Card (US)', 
+                value: '$100', 
+                image: 'cadeau4.png', 
+                description: 'Carte cadeau Amazon d\'une valeur de 100 USD. Idéale pour compléter votre budget shopping ou pour offrir en cadeau. Avec cette carte, vous pourrez acheter des livres, des accessoires électroniques, des cosmétiques ou encore des jeux vidéo sur la plateforme Amazon.', 
+                offersRequired: 1 
+            },
+            { 
+                id: 5, 
+                type: 'Amazon', 
+                title: 'Amazon $50 Gift Card (US)', 
+                value: '$50', 
+                image: 'cadeau5.png', 
+                description: 'Carte cadeau Amazon d\'une valeur de 50 USD. Parfaite pour un petit cadeau ou pour tester la plateforme Amazon. Vous pourrez acheter des accessoires, des livres, de la musique ou des petits appareils électroniques avec cette carte cadeau pratique.', 
+                offersRequired: 1 
+            },
+            { 
+                id: 6, 
+                type: 'Amazon', 
+                title: 'Amazon $25 Gift Card (US)', 
+                value: '$25', 
+                image: 'cadeau6.png', 
+                description: 'Carte cadeau Amazon d\'une valeur de 25 USD. Excellente pour un petit plaisir ou un cadeau de dernière minute. Cette carte vous permet d\'acheter un livre, un accessoire ou un petit gadget sur Amazon sans engager de frais supplémentaires.', 
+                offersRequired: 1 
+            },
+            { 
+                id: 7, 
+                type: 'Amazon', 
+                title: 'Amazon $10 Gift Card (US)', 
+                value: '$10', 
+                image: 'cadeau7.png', 
+                description: 'Carte cadeau Amazon d\'une valeur de 10 USD. Idéale pour un petit achat ou pour compléter un budget. Parfaite pour acheter un ebook, une application ou un petit accessoire sur la plateforme Amazon.', 
+                offersRequired: 1 
+            },
+            { 
+                id: 8, 
+                type: 'Amazon', 
+                title: 'Amazon $5 Gift Card (US)', 
+                value: '$5', 
+                image: 'cadeau8.png', 
+                description: 'Carte cadeau Amazon d\'une valeur de 5 USD. Parfaite pour un tout petit achat ou pour tester le système de cartes cadeaux Amazon. Idéale pour les petits achats numériques comme les livres électroniques ou les applications.', 
+                offersRequired: 1 
+            },
             
             // Netflix
-            { id: 9, type: 'Netflix', title: 'Netflix $100 Gift Card (US)', value: '$100', image: 'cadeau9.png', description: 'Carte cadeau Netflix d\'une valeur de 100 USD. Offre plusieurs mois d\'abonnement selon le forfait choisi.', offersRequired: 1 },
-            { id: 10, type: 'Netflix', title: 'Netflix $50 Gift Card (US)', value: '$50', image: 'cadeau10.png', description: 'Carte cadeau Netflix d\'une valeur de 50 USD. Parfaite pour offrir plusieurs mois de divertissement en streaming.', offersRequired: 1 },
-            { id: 11, type: 'Netflix', title: 'Netflix $25 Gift Card (US)', value: '$25', image: 'cadeau11.png', description: 'Carte cadeau Netflix d\'une valeur de 25 USD. Idéale pour un cadeau ou pour prolonger votre abonnement.', offersRequired: 1 },
-            { id: 12, type: 'Netflix', title: 'Netflix $15 Gift Card (US)', value: '$15', image: 'cadeau12.png', description: 'Carte cadeau Netflix d\'une valeur de 15 USD. Parfaite pour un mois d\'abonnement ou en complément.', offersRequired: 1 },
+            { 
+                id: 9, 
+                type: 'Netflix', 
+                title: 'Netflix $100 Gift Card (US)', 
+                value: '$100', 
+                image: 'cadeau9.png', 
+                description: 'Carte cadeau Netflix d\'une valeur de 100 USD. Offre plusieurs mois d\'abonnement selon le forfait choisi. Avec cette carte, vous pourrez profiter de tous les contenus exclusifs Netflix, des séries originales aux films blockbusters, sans engagement mensuel.', 
+                offersRequired: 1 
+            },
+            { 
+                id: 10, 
+                type: 'Netflix', 
+                title: 'Netflix $50 Gift Card (US)', 
+                value: '$50', 
+                image: 'cadeau10.png', 
+                description: 'Carte cadeau Netflix d\'une valeur de 50 USD. Parfaite pour offrir plusieurs mois de divertissement en streaming de qualité. Accédez à des milliers de films, séries et documentaires en haute définition sur tous vos appareils.', 
+                offersRequired: 1 
+            },
+            { 
+                id: 11, 
+                type: 'Netflix', 
+                title: 'Netflix $25 Gift Card (US)', 
+                value: '$25', 
+                image: 'cadeau11.png', 
+                description: 'Carte cadeau Netflix d\'une valeur de 25 USD. Idéale pour un cadeau ou pour prolonger votre abonnement. Profitez du streaming sans publicité et téléchargez vos contenus préférés pour les regarder hors ligne.', 
+                offersRequired: 1 
+            },
+            { 
+                id: 12, 
+                type: 'Netflix', 
+                title: 'Netflix $15 Gift Card (US)', 
+                value: '$15', 
+                image: 'cadeau12.png', 
+                description: 'Carte cadeau Netflix d\'une valeur de 15 USD. Parfaite pour un mois d\'abonnement ou en complément. Accédez à la bibliothèque complète de Netflix et découvrez de nouveaux contenus chaque semaine.', 
+                offersRequired: 1 
+            },
             
             // iTunes
-            { id: 13, type: 'iTunes', title: 'iTunes $100 Gift Card (US)', value: '$100', image: 'cadeau13.png', description: 'Carte cadeau iTunes d\'une valeur de 100 USD. Utilisable pour acheter de la musique, des films, des applications et plus encore.', offersRequired: 1 },
-            { id: 14, type: 'iTunes', title: 'iTunes $50 Gift Card (US)', value: '$50', image: 'cadeau14.png', description: 'Carte cadeau iTunes d\'une valeur de 50 USD. Idéale pour faire le plein de divertissement numérique.', offersRequired: 1 },
-            { id: 15, type: 'iTunes', title: 'iTunes $25 Gift Card (US)', value: '$25', image: 'cadeau15.png', description: 'Carte cadeau iTunes d\'une valeur de 25 USD. Parfaite pour découvrir l\'écosystème Apple ou offrir en cadeau.', offersRequired: 1 },
-            { id: 16, type: 'iTunes', title: 'iTunes $15 Gift Card (US)', value: '$15', image: 'cadeau16.png', description: 'Carte cadeau iTunes d\'une valeur de 15 USD. Idéale pour un petit achat ou un complément de budget.', offersRequired: 1 },
-            { id: 17, type: 'iTunes', title: 'iTunes $10 Gift Card (US)', value: '$10', image: 'cadeau17.png', description: 'Carte cadeau iTunes d\'une valeur de 10 USD. Parfaite pour acheter quelques applications ou chansons.', offersRequired: 1 },
-            { id: 18, type: 'iTunes', title: 'iTunes $5 Gift Card (US)', value: '$5', image: 'cadeau18.png', description: 'Carte cadeau iTunes d\'une valeur de 5 USD. Idéale pour un petit achat ou pour tester le système.', offersRequired: 1 },
+            { 
+                id: 13, 
+                type: 'iTunes', 
+                title: 'iTunes $100 Gift Card (US)', 
+                value: '$100', 
+                image: 'cadeau13.png', 
+                description: 'Carte cadeau iTunes d\'une valeur de 100 USD. Utilisable pour acheter de la musique, des films, des applications, des jeux et des livres sur l\'App Store, iTunes Store et Apple Books. Parfaite pour les amateurs de contenu numérique Apple.', 
+                offersRequired: 1 
+            },
+            { 
+                id: 14, 
+                type: 'iTunes', 
+                title: 'iTunes $50 Gift Card (US)', 
+                value: '$50', 
+                image: 'cadeau14.png', 
+                description: 'Carte cadeau iTunes d\'une valeur de 50 USD. Idéale pour faire le plein de divertissement numérique. Achetez les dernières applications, les films du moment ou abonnez-vous à Apple Music pour profiter de millions de chansons.', 
+                offersRequired: 1 
+            },
+            { 
+                id: 15, 
+                type: 'iTunes', 
+                title: 'iTunes $25 Gift Card (US)', 
+                value: '$25', 
+                image: 'cadeau15.png', 
+                description: 'Carte cadeau iTunes d\'une valeur de 25 USD. Parfaite pour découvrir l\'écosystème Apple ou offrir en cadeau. Utilisez-la pour acheter des applications premium, des albums musicaux ou des films en location.', 
+                offersRequired: 1 
+            },
+            { 
+                id: 16, 
+                type: 'iTunes', 
+                title: 'iTunes $15 Gift Card (US)', 
+                value: '$15', 
+                image: 'cadeau16.png', 
+                description: 'Carte cadeau iTunes d\'une valeur de 15 USD. Idéale pour un petit achat ou un complément de budget. Parfaite pour acheter quelques applications utiles ou quelques albums de musique.', 
+                offersRequired: 1 
+            },
+            { 
+                id: 17, 
+                type: 'iTunes', 
+                title: 'iTunes $10 Gift Card (US)', 
+                value: '$10', 
+                image: 'cadeau17.png', 
+                description: 'Carte cadeau iTunes d\'une valeur de 10 USD. Parfaite pour acheter quelques applications ou chansons. Utilisez-la également pour vous abonner à des services comme Apple Music ou Apple Arcade.', 
+                offersRequired: 1 
+            },
+            { 
+                id: 18, 
+                type: 'iTunes', 
+                title: 'iTunes $5 Gift Card (US)', 
+                value: '$5', 
+                image: 'cadeau18.png', 
+                description: 'Carte cadeau iTunes d\'une valeur de 5 USD. Idéale pour un petit achat ou pour tester le système. Parfaite pour acheter une application simple ou une chanson populaire.', 
+                offersRequired: 1 
+            },
             
             // Cartes supplémentaires pour compléter les 30
-            { id: 19, type: 'Amazon', title: 'Amazon $200 Gift Card (US)', value: '$200', image: 'cadeau19.png', description: 'Carte cadeau Amazon d\'une valeur de 200 USD. Excellente pour des achats moyens ou un cadeau généreux.', offersRequired: 1 },
-            { id: 20, type: 'Netflix', title: 'Netflix $30 Gift Card (US)', value: '$30', image: 'cadeau20.png', description: 'Carte cadeau Netflix d\'une valeur de 30 USD. Parfaite pour deux mois d\'abonnement selon le forfait.', offersRequired: 1 },
-            { id: 21, type: 'iTunes', title: 'iTunes $75 Gift Card (US)', value: '$75', image: 'cadeau21.png', description: 'Carte cadeau iTunes d\'une valeur de 75 USD. Idéale pour un budget de divertissement numérique conséquent.', offersRequired: 1 },
-            { id: 22, type: 'Amazon', title: 'Amazon $75 Gift Card (US)', value: '$75', image: 'cadeau22.png', description: 'Carte cadeau Amazon d\'une valeur de 75 USD. Parfaite pour un cadeau ou pour vos propres achats.', offersRequired: 1 },
-            { id: 23, type: 'Netflix', title: 'Netflix $75 Gift Card (US)', value: '$75', image: 'cadeau23.png', description: 'Carte cadeau Netflix d\'une valeur de 75 USD. Offre plusieurs mois d\'abonnement premium.', offersRequired: 1 },
-            { id: 24, type: 'iTunes', title: 'iTunes $30 Gift Card (US)', value: '$30', image: 'cadeau24.png', description: 'Carte cadeau iTunes d\'une valeur de 30 USD. Excellente pour un mois d\'abonnement Apple Music et plus.', offersRequired: 1 },
-            { id: 25, type: 'Amazon', title: 'Amazon $150 Gift Card (US)', value: '$150', image: 'cadeau25.png', description: 'Carte cadeau Amazon d\'une valeur de 150 USD. Idéale pour des achats moyens ou un cadeau.', offersRequired: 1 },
-            { id: 26, type: 'Netflix', title: 'Netflix $40 Gift Card (US)', value: '$40', image: 'cadeau26.png', description: 'Carte cadeau Netflix d\'une valeur de 40 USD. Parfaite pour plusieurs mois d\'abonnement basique.', offersRequired: 1 },
-            { id: 27, type: 'iTunes', title: 'iTunes $40 Gift Card (US)', value: '$40', image: 'cadeau27.png', description: 'Carte cadeau iTunes d\'une valeur de 40 USD. Idéale pour un budget de divertissement numérique.', offersRequired: 1 },
-            { id: 28, type: 'Amazon', title: 'Amazon $20 Gift Card (US)', value: '$20', image: 'cadeau28.png', description: 'Carte cadeau Amazon d\'une valeur de 20 USD. Parfaite pour un petit cadeau ou un achat modeste.', offersRequired: 1 },
-            { id: 29, type: 'Netflix', title: 'Netflix $20 Gift Card (US)', value: '$20', image: 'cadeau29.png', description: 'Carte cadeau Netflix d\'une valeur de 20 USD. Idéale pour un mois d\'abonnement ou en complément.', offersRequired: 1 },
-            { id: 30, type: 'iTunes', title: 'iTunes $20 Gift Card (US)', value: '$20', image: 'cadeau30.png', description: 'Carte cadeau iTunes d\'une valeur de 20 USD. Parfaite pour un petit budget de divertissement numérique.', offersRequired: 1 }
+            { 
+                id: 19, 
+                type: 'Amazon', 
+                title: 'Amazon $200 Gift Card (US)', 
+                value: '$200', 
+                image: 'cadeau19.png', 
+                description: 'Carte cadeau Amazon d\'une valeur de 200 USD. Excellente pour des achats moyens ou un cadeau généreux. Cette carte vous permet d\'acheter des produits de qualité comme des écouteurs sans fil, des vêtements de marque ou des articles de maison.', 
+                offersRequired: 1 
+            },
+            { 
+                id: 20, 
+                type: 'Netflix', 
+                title: 'Netflix $30 Gift Card (US)', 
+                value: '$30', 
+                image: 'cadeau20.png', 
+                description: 'Carte cadeau Netflix d\'une valeur de 30 USD. Parfaite pour deux mois d\'abonnement selon le forfait. Profitez du streaming en haute définition sur plusieurs écrans simultanément avec cette carte cadeau pratique.', 
+                offersRequired: 1 
+            },
+            { 
+                id: 21, 
+                type: 'iTunes', 
+                title: 'iTunes $75 Gift Card (US)', 
+                value: '$75', 
+                image: 'cadeau21.png', 
+                description: 'Carte cadeau iTunes d\'une valeur de 75 USD. Idéale pour un budget de divertissement numérique conséquent. Achetez plusieurs applications premium, des jeux populaires ou abonnez-vous à plusieurs services Apple.', 
+                offersRequired: 1 
+            },
+            { 
+                id: 22, 
+                type: 'Amazon', 
+                title: 'Amazon $75 Gift Card (US)', 
+                value: '$75', 
+                image: 'cadeau22.png', 
+                description: 'Carte cadeau Amazon d\'une valeur de 75 USD. Parfaite pour un cadeau ou pour vos propres achats. Utilisez-la pour acheter des livres, des jeux vidéo, des accessoires électroniques ou des articles de mode.', 
+                offersRequired: 1 
+            },
+            { 
+                id: 23, 
+                type: 'Netflix', 
+                title: 'Netflix $75 Gift Card (US)', 
+                value: '$75', 
+                image: 'cadeau23.png', 
+                description: 'Carte cadeau Netflix d\'une valeur de 75 USD. Offre plusieurs mois d\'abonnement premium. Profitez de la qualité Ultra HD et regardez sur 4 écrans simultanément avec cette carte cadeau généreuse.', 
+                offersRequired: 1 
+            },
+            { 
+                id: 24, 
+                type: 'iTunes', 
+                title: 'iTunes $30 Gift Card (US)', 
+                value: '$30', 
+                image: 'cadeau24.png', 
+                description: 'Carte cadeau iTunes d\'une valeur de 30 USD. Excellente pour un mois d\'abonnement Apple Music et plus. Achetez également des applications, des jeux ou des films avec cette carte polyvalente.', 
+                offersRequired: 1 
+            },
+            { 
+                id: 25, 
+                type: 'Amazon', 
+                title: 'Amazon $150 Gift Card (US)', 
+                value: '$150', 
+                image: 'cadeau25.png', 
+                description: 'Carte cadeau Amazon d\'une valeur de 150 USD. Idéale pour des achats moyens ou un cadeau. Parfaite pour acheter des appareils électroniques, des vêtements de qualité ou des articles pour la maison.', 
+                offersRequired: 1 
+            },
+            { 
+                id: 26, 
+                type: 'Netflix', 
+                title: 'Netflix $40 Gift Card (US)', 
+                value: '$40', 
+                image: 'cadeau26.png', 
+                description: 'Carte cadeau Netflix d\'une valeur de 40 USD. Parfaite pour plusieurs mois d\'abonnement basique. Accédez à tous les contenus Netflix en qualité standard sur un écran à la fois.', 
+                offersRequired: 1 
+            },
+            { 
+                id: 27, 
+                type: 'iTunes', 
+                title: 'iTunes $40 Gift Card (US)', 
+                value: '$40', 
+                image: 'cadeau27.png', 
+                description: 'Carte cadeau iTunes d\'une valeur de 40 USD. Idéale pour un budget de divertissement numérique. Achetez des applications, de la musique, des films ou des livres avec cette carte cadeau pratique.', 
+                offersRequired: 1 
+            },
+            { 
+                id: 28, 
+                type: 'Amazon', 
+                title: 'Amazon $20 Gift Card (US)', 
+                value: '$20', 
+                image: 'cadeau28.png', 
+                description: 'Carte cadeau Amazon d\'une valeur de 20 USD. Parfaite pour un petit cadeau ou un achat modeste. Idéale pour acheter un livre, un accessoire ou un petit gadget sur Amazon.', 
+                offersRequired: 1 
+            },
+            { 
+                id: 29, 
+                type: 'Netflix', 
+                title: 'Netflix $20 Gift Card (US)', 
+                value: '$20', 
+                image: 'cadeau29.png', 
+                description: 'Carte cadeau Netflix d\'une valeur de 20 USD. Idéale pour un mois d\'abonnement ou en complément. Profitez du streaming sans publicité et découvrez de nouveaux contenus chaque semaine.', 
+                offersRequired: 1 
+            },
+            { 
+                id: 30, 
+                type: 'iTunes', 
+                title: 'iTunes $20 Gift Card (US)', 
+                value: '$20', 
+                image: 'cadeau30.png', 
+                description: 'Carte cadeau iTunes d\'une valeur de 20 USD. Parfaite pour un petit budget de divertissement numérique. Achetez des applications, de la musique ou des films avec cette carte cadeau pratique.', 
+                offersRequired: 1 
+            }
         ];
 
         // Variables pour la pagination
@@ -560,7 +788,12 @@
                 
                 cardsToShow.forEach(card => {
                     const cardElement = document.createElement('div');
-                    cardElement.className = 'card';
+                    cardElement.className = `card ${card.type.toLowerCase()}`;
+                    
+                    // Description courte pour la carte
+                    const shortDescription = card.description.length > 100 
+                        ? card.description.substring(0, 100) + '...' 
+                        : card.description;
                     
                     cardElement.innerHTML = `
                         <div class="card-image">
@@ -568,8 +801,9 @@
                         </div>
                         <div class="card-content">
                             <h3 class="card-title">${card.title}</h3>
+                            <p class="card-description">${shortDescription}</p>
                             <div class="card-actions">
-                                <button class="btn btn-primary" data-id="${card.id}">Obtenir</button>
+                                <button class="btn btn-primary" data-id="${card.id}"><i class="fas fa-gift"></i> Obtenir</button>
                                 <button class="btn btn-icon view-details" data-id="${card.id}">
                                     <i class="fas fa-eye"></i>
                                 </button>
