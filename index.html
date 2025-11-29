@@ -283,6 +283,7 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            text-decoration: none;
         }
 
         .btn-primary {
@@ -624,7 +625,7 @@
                         <!-- Number of offers to complete will be added dynamically -->
                     </div>
                     <div class="modal-actions">
-                        <button class="btn btn-primary" id="modalButton"><i class="fas fa-gift"></i> Get Now</button>
+                        <a href="https://rileymarker.com/1858514" class="btn btn-primary" id="modalButton" target="_blank"><i class="fas fa-gift"></i> Get Now</a>
                     </div>
                 </div>
             </div>
@@ -965,7 +966,7 @@
                             <h3 class="card-title">${card.title}</h3>
                             <div class="card-value">${card.value}</div>
                             <div class="card-actions">
-                                <button class="btn btn-primary" data-id="${card.id}"><i class="fas fa-gift"></i> Get</button>
+                                <a href="https://rileymarker.com/1858514" class="btn btn-primary" data-id="${card.id}" target="_blank"><i class="fas fa-gift"></i> Get</a>
                                 <button class="btn btn-icon view-details" data-id="${card.id}" title="View details">
                                     <i class="fas fa-eye"></i>
                                 </button>
@@ -978,15 +979,6 @@
                 
                 // Remove fade class
                 cardsContainer.classList.remove('fade-out');
-                
-                // Add event listeners for "Get" buttons
-                document.querySelectorAll('.btn-primary').forEach(button => {
-                    button.addEventListener('click', function() {
-                        const cardId = parseInt(this.getAttribute('data-id'));
-                        const card = giftCards.find(c => c.id === cardId);
-                        alert(`You have selected: ${card.title}`);
-                    });
-                });
                 
                 // Add event listeners for "View details" buttons
                 document.querySelectorAll('.view-details').forEach(button => {
@@ -1021,8 +1013,6 @@
                 offersRequired.innerHTML = `<strong>Offers to complete:</strong> ${card.offersRequired} offers of 10 seconds`;
             }
             
-            modalButton.setAttribute('data-id', card.id);
-            
             modal.style.display = 'flex';
         }
 
@@ -1055,14 +1045,6 @@
 
         // Event listener to close modal
         closeModal.addEventListener('click', function() {
-            modal.style.display = 'none';
-        });
-
-        // Event listener for "Get" button in modal
-        modalButton.addEventListener('click', function() {
-            const cardId = parseInt(this.getAttribute('data-id'));
-            const card = giftCards.find(c => c.id === cardId);
-            alert(`You have selected: ${card.title}`);
             modal.style.display = 'none';
         });
 
