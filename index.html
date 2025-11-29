@@ -124,6 +124,10 @@
             background: linear-gradient(90deg, #FB5BC5, #8A2BE2);
         }
 
+        .card.googleplay::before {
+            background: linear-gradient(90deg, #34A853, #0F9D58);
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -205,6 +209,11 @@
         .card.itunes .card-value {
             color: #8A2BE2;
             background: linear-gradient(135deg, #f3e5f5, #f0e6ff);
+        }
+
+        .card.googleplay .card-value {
+            color: #34A853;
+            background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
         }
 
         .card-actions {
@@ -377,6 +386,11 @@
             display: inline-block;
         }
 
+        .modal.googleplay .modal-value {
+            color: #34A853;
+            background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+        }
+
         .modal-description {
             margin-bottom: 1.5rem;
             line-height: 1.6;
@@ -487,7 +501,7 @@
 <body>
     <header>
         <h1><i class="fas fa-gift"></i> Get Your Gift Card Free</h1>
-        <p>Découvrez notre sélection exclusive de cartes cadeaux gratuites pour Amazon, Netflix et iTunes</p>
+        <p>Découvrez notre sélection exclusive de cartes cadeaux gratuites pour Amazon, Netflix, iTunes et Google Play</p>
     </header>
 
     <div class="container">
@@ -734,77 +748,77 @@
                 offersRequired: 1 
             },
             
-            // Cartes supplémentaires pour compléter les 30
+            // Google Play
             { 
                 id: 23, 
-                type: 'Amazon', 
-                title: 'Amazon $200 Gift Card', 
-                value: '$200', 
-                image: 'image1.jpg', 
-                description: 'Carte cadeau Amazon d\'une valeur de 200 USD. Excellente pour des achats moyens ou un cadeau généreux. Cette carte vous permet d\'acheter des produits de qualité comme des écouteurs sans fil, des vêtements de marque ou des articles de maison.', 
-                offersRequired: 1 
+                type: 'GooglePlay', 
+                title: 'Google Play $1000 Gift Card', 
+                value: '$1000', 
+                image: 'image4.jpg', 
+                description: 'Carte cadeau Google Play d\'une valeur de 1000 USD. Cette carte premium vous donne accès à l\'ensemble de l\'écosystème Google. Utilisable pour acheter des applications, des jeux, des films, de la musique, des livres et des abonnements sur le Google Play Store.', 
+                offersRequired: 3 
             },
             { 
                 id: 24, 
-                type: 'Netflix', 
-                title: 'Netflix $30 Gift Card', 
-                value: '$30', 
-                image: 'image2.jpg', 
-                description: 'Carte cadeau Netflix d\'une valeur de 30 USD. Parfaite pour deux mois d\'abonnement selon le forfait. Profitez du streaming en haute définition sur plusieurs écrans simultanément avec cette carte cadeau pratique.', 
-                offersRequired: 1 
+                type: 'GooglePlay', 
+                title: 'Google Play $500 Gift Card', 
+                value: '$500', 
+                image: 'image4.jpg', 
+                description: 'Carte cadeau Google Play d\'une valeur de 500 USD. Idéale pour les amateurs de contenu numérique Android. Achetez des applications premium, des jeux, des films, de la musique et abonnez-vous aux services Google avec cette carte généreuse.', 
+                offersRequired: 2 
             },
             { 
                 id: 25, 
-                type: 'iTunes', 
-                title: 'iTunes $75 Gift Card', 
-                value: '$75', 
-                image: 'image3.jpg', 
-                description: 'Carte cadeau iTunes d\'une valeur de 75 USD. Idéale pour un budget de divertissement numérique conséquent. Achetez plusieurs applications premium, des jeux populaires ou abonnez-vous à plusieurs services Apple.', 
+                type: 'GooglePlay', 
+                title: 'Google Play $100 Gift Card', 
+                value: '$100', 
+                image: 'image4.jpg', 
+                description: 'Carte cadeau Google Play d\'une valeur de 100 USD. Utilisable pour acheter des applications, des jeux, des films, de la musique et des livres sur le Google Play Store. Parfaite pour les utilisateurs d\'appareils Android.', 
                 offersRequired: 1 
             },
             { 
                 id: 26, 
-                type: 'Amazon', 
-                title: 'Amazon $75 Gift Card', 
-                value: '$75', 
-                image: 'image1.jpg', 
-                description: 'Carte cadeau Amazon d\'une valeur de 75 USD. Parfaite pour un cadeau ou pour vos propres achats. Utilisez-la pour acheter des livres, des jeux vidéo, des accessoires électroniques ou des articles de mode.', 
+                type: 'GooglePlay', 
+                title: 'Google Play $50 Gift Card', 
+                value: '$50', 
+                image: 'image4.jpg', 
+                description: 'Carte cadeau Google Play d\'une valeur de 50 USD. Idéale pour faire le plein de divertissement numérique. Achetez les dernières applications, les jeux populaires ou abonnez-vous à YouTube Premium pour profiter de millions de vidéos sans publicité.', 
                 offersRequired: 1 
             },
             { 
                 id: 27, 
-                type: 'Netflix', 
-                title: 'Netflix $75 Gift Card', 
-                value: '$75', 
-                image: 'image2.jpg', 
-                description: 'Carte cadeau Netflix d\'une valeur de 75 USD. Offre plusieurs mois d\'abonnement premium. Profitez de la qualité Ultra HD et regardez sur 4 écrans simultanément avec cette carte cadeau généreuse.', 
+                type: 'GooglePlay', 
+                title: 'Google Play $25 Gift Card', 
+                value: '$25', 
+                image: 'image4.jpg', 
+                description: 'Carte cadeau Google Play d\'une valeur de 25 USD. Parfaite pour découvrir l\'écosystème Android ou offrir en cadeau. Utilisez-la pour acheter des applications premium, des albums musicaux ou des films en location.', 
                 offersRequired: 1 
             },
             { 
                 id: 28, 
-                type: 'iTunes', 
-                title: 'iTunes $30 Gift Card', 
-                value: '$30', 
-                image: 'image3.jpg', 
-                description: 'Carte cadeau iTunes d\'une valeur de 30 USD. Excellente pour un mois d\'abonnement Apple Music et plus. Achetez également des applications, des jeux ou des films avec cette carte polyvalente.', 
+                type: 'GooglePlay', 
+                title: 'Google Play $15 Gift Card', 
+                value: '$15', 
+                image: 'image4.jpg', 
+                description: 'Carte cadeau Google Play d\'une valeur de 15 USD. Idéale pour un petit achat ou un complément de budget. Parfaite pour acheter quelques applications utiles ou quelques albums de musique.', 
                 offersRequired: 1 
             },
             { 
                 id: 29, 
-                type: 'Amazon', 
-                title: 'Amazon $150 Gift Card', 
-                value: '$150', 
-                image: 'image1.jpg', 
-                description: 'Carte cadeau Amazon d\'une valeur de 150 USD. Idéale pour des achats moyens ou un cadeau. Parfaite pour acheter des appareils électroniques, des vêtements de qualité ou des articles pour la maison.', 
+                type: 'GooglePlay', 
+                title: 'Google Play $10 Gift Card', 
+                value: '$10', 
+                image: 'image4.jpg', 
+                description: 'Carte cadeau Google Play d\'une valeur de 10 USD. Parfaite pour acheter quelques applications ou chansons. Utilisez-la également pour vous abonner à des services comme YouTube Music ou Google One.', 
                 offersRequired: 1 
             },
             { 
                 id: 30, 
-                type: 'Netflix', 
-                title: 'Netflix $40 Gift Card', 
-                value: '$40', 
-                image: 'image2.jpg', 
-                description: 'Carte cadeau Netflix d\'une valeur de 40 USD. Parfaite pour plusieurs mois d\'abonnement basique. Accédez à tous les contenus Netflix en qualité standard sur un écran à la fois.', 
+                type: 'GooglePlay', 
+                title: 'Google Play $5 Gift Card', 
+                value: '$5', 
+                image: 'image4.jpg', 
+                description: 'Carte cadeau Google Play d\'une valeur de 5 USD. Idéale pour un petit achat ou pour tester le système. Parfaite pour acheter une application simple ou une chanson populaire.', 
                 offersRequired: 1 
             }
         ];
@@ -899,6 +913,12 @@
             modalTitle.textContent = card.title;
             modalValue.textContent = card.value;
             modalDescription.textContent = card.description;
+            
+            // Appliquer la classe Google Play au modal si nécessaire
+            modal.querySelector('.modal-content').classList.remove('googleplay');
+            if (card.type === 'GooglePlay') {
+                modal.querySelector('.modal-content').classList.add('googleplay');
+            }
             
             // Afficher le nombre d'offres à valider
             if (card.offersRequired === 1) {
