@@ -35,10 +35,15 @@
         }
 
         header {
-            background: linear-gradient(135deg, var(--blue), var(--sky-blue));
+            background: 
+                linear-gradient(135deg, rgba(26, 115, 232, 0.85), rgba(135, 206, 235, 0.85)),
+                url('https://images.unsplash.com/photo-1546387903-6d82d96ccca6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             color: var(--white);
             text-align: center;
-            padding: 2.5rem 1rem;
+            padding: 3rem 1rem;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             position: relative;
             overflow: hidden;
@@ -57,18 +62,63 @@
         }
 
         header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
             position: relative;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            font-weight: 700;
         }
 
         header p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             max-width: 800px;
             margin: 0 auto;
             position: relative;
-            opacity: 0.9;
+            opacity: 0.95;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+            font-weight: 500;
+        }
+
+        .christmas-decoration {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: #e74c3c;
+            border-radius: 50%;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .decoration-1 {
+            top: 20%;
+            left: 10%;
+            background: #e74c3c;
+            animation-delay: 0s;
+        }
+
+        .decoration-2 {
+            top: 15%;
+            right: 15%;
+            background: #2ecc71;
+            animation-delay: 0.5s;
+        }
+
+        .decoration-3 {
+            bottom: 25%;
+            left: 15%;
+            background: #f39c12;
+            animation-delay: 1s;
+        }
+
+        .decoration-4 {
+            bottom: 20%;
+            right: 10%;
+            background: #9b59b6;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
         }
 
         .container {
@@ -453,6 +503,14 @@
             .cards-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
+            
+            header h1 {
+                font-size: 2.4rem;
+            }
+            
+            header p {
+                font-size: 1.1rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -472,11 +530,9 @@
             .card-actions {
                 justify-content: center;
             }
-        }
-
-        @media (max-width: 576px) {
-            .cards-grid {
-                grid-template-columns: 1fr;
+            
+            header {
+                padding: 2.5rem 1rem;
             }
             
             header h1 {
@@ -487,6 +543,25 @@
                 font-size: 1rem;
             }
             
+            .christmas-decoration {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            header p {
+                font-size: 0.9rem;
+            }
+            
             .card-actions {
                 flex-direction: column;
                 gap: 0.5rem;
@@ -495,6 +570,11 @@
             .btn {
                 width: 100%;
                 justify-content: center;
+            }
+            
+            .christmas-decoration {
+                width: 20px;
+                height: 20px;
             }
         }
 
@@ -509,6 +589,11 @@
 </head>
 <body>
     <header>
+        <div class="christmas-decoration decoration-1"></div>
+        <div class="christmas-decoration decoration-2"></div>
+        <div class="christmas-decoration decoration-3"></div>
+        <div class="christmas-decoration decoration-4"></div>
+        
         <h1><i class="fas fa-gift"></i> Free Christmas Gift Cards</h1>
         <p>Discover our exclusive selection of free gift cards for Amazon, Netflix, iTunes and Google Play</p>
     </header>
