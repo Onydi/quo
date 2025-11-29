@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get Your Gift Card Free</title>
+    <title>Free Christmas Gift Cards</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -463,6 +463,15 @@
             .modal-body {
                 flex-direction: column;
             }
+            
+            /* Hide the "View" button on mobile */
+            .btn-icon {
+                display: none;
+            }
+            
+            .card-actions {
+                justify-content: center;
+            }
         }
 
         @media (max-width: 576px) {
@@ -500,37 +509,37 @@
 </head>
 <body>
     <header>
-        <h1><i class="fas fa-gift"></i> Get Your Gift Card Free</h1>
-        <p>Découvrez notre sélection exclusive de cartes cadeaux gratuites pour Amazon, Netflix, iTunes et Google Play</p>
+        <h1><i class="fas fa-gift"></i> Free Christmas Gift Cards</h1>
+        <p>Discover our exclusive selection of free gift cards for Amazon, Netflix, iTunes and Google Play</p>
     </header>
 
     <div class="container">
         <div class="cards-grid" id="cardsContainer">
-            <!-- Les cartes seront générées dynamiquement avec JavaScript -->
+            <!-- Cards will be generated dynamically with JavaScript -->
         </div>
 
         <div class="pagination" id="pagination">
-            <!-- La pagination sera générée dynamiquement avec JavaScript -->
+            <!-- Pagination will be generated dynamically with JavaScript -->
         </div>
     </div>
 
-    <!-- Modal pour afficher les détails d'une carte -->
+    <!-- Modal to display card details -->
     <div class="modal" id="cardModal">
         <div class="modal-content">
             <button class="modal-close" id="closeModal">&times;</button>
             <div class="modal-body">
                 <div class="modal-image">
-                    <img id="modalImage" src="" alt="Carte cadeau">
+                    <img id="modalImage" src="" alt="Gift card">
                 </div>
                 <div class="modal-details">
                     <h2 class="modal-title" id="modalTitle"></h2>
                     <div class="modal-value" id="modalValue"></div>
                     <p class="modal-description" id="modalDescription"></p>
                     <div class="offers-required" id="offersRequired">
-                        <!-- Le nombre d'offres à valider sera ajouté dynamiquement -->
+                        <!-- Number of offers to complete will be added dynamically -->
                     </div>
                     <div class="modal-actions">
-                        <button class="btn btn-primary" id="modalButton"><i class="fas fa-gift"></i> Obtenir Maintenant</button>
+                        <button class="btn btn-primary" id="modalButton"><i class="fas fa-gift"></i> Get Now</button>
                     </div>
                 </div>
             </div>
@@ -538,11 +547,11 @@
     </div>
 
     <footer>
-        <p>&copy; 2023 Get Your Gift Card Free. Tous droits réservés.</p>
+        <p>&copy; 2023 Free Christmas Gift Cards. All rights reserved.</p>
     </footer>
 
     <script>
-        // Données des cartes cadeaux avec descriptions détaillées
+        // Gift card data with detailed descriptions
         const giftCards = [
             // Amazon
             { 
@@ -551,7 +560,7 @@
                 title: 'Amazon $1000 Gift Card', 
                 value: '$1000', 
                 image: 'image1.jpg', 
-                description: 'Carte cadeau Amazon d\'une valeur de 1000 USD. Cette carte cadeau premium vous donne accès à des millions de produits sur Amazon.com, des appareils électroniques aux vêtements en passant par les articles ménagers. Parfaite pour les gros achats ou comme cadeau exceptionnel pour des occasions spéciales.', 
+                description: 'Amazon gift card with a value of 1000 USD. This premium gift card gives you access to millions of products on Amazon.com, from electronics to clothing to household items. Perfect for large purchases or as an exceptional gift for special occasions.', 
                 offersRequired: 2 
             },
             { 
@@ -560,7 +569,7 @@
                 title: 'Amazon $500 Gift Card', 
                 value: '$500', 
                 image: 'image1.jpg', 
-                description: 'Carte cadeau Amazon d\'une valeur de 500 USD. Une somme généreuse qui vous permettra de faire le plein de vos produits préférés ou d\'offrir un cadeau de grande valeur. Utilisable sur tous les produits éligibles d\'Amazon, y compris les livres, l\'électronique, les jeux vidéo et bien plus encore.', 
+                description: 'Amazon gift card with a value of 500 USD. A generous amount that will allow you to stock up on your favorite products or give a high-value gift. Usable on all eligible Amazon products, including books, electronics, video games and much more.', 
                 offersRequired: 2 
             },
             { 
@@ -569,7 +578,7 @@
                 title: 'Amazon $250 Gift Card', 
                 value: '$250', 
                 image: 'image1.jpg', 
-                description: 'Carte cadeau Amazon d\'une valeur de 250 USD. Un excellent moyen de découvrir la large gamme de produits disponibles sur Amazon ou de faire plaisir à un proche. Cette carte est parfaite pour les achats moyens comme les appareils électroniques, les vêtements de marque ou les articles de maison.', 
+                description: 'Amazon gift card with a value of 250 USD. An excellent way to discover the wide range of products available on Amazon or to please a loved one. This card is perfect for medium purchases like electronics, brand name clothing or home items.', 
                 offersRequired: 1 
             },
             { 
@@ -578,7 +587,7 @@
                 title: 'Amazon $100 Gift Card', 
                 value: '$100', 
                 image: 'image1.jpg', 
-                description: 'Carte cadeau Amazon d\'une valeur de 100 USD. Idéale pour compléter votre budget shopping ou pour offrir en cadeau. Avec cette carte, vous pourrez acheter des livres, des accessoires électroniques, des cosmétiques ou encore des jeux vidéo sur la plateforme Amazon.', 
+                description: 'Amazon gift card with a value of 100 USD. Ideal for completing your shopping budget or for giving as a gift. With this card, you can buy books, electronic accessories, cosmetics or even video games on the Amazon platform.', 
                 offersRequired: 1 
             },
             { 
@@ -587,7 +596,7 @@
                 title: 'Amazon $50 Gift Card', 
                 value: '$50', 
                 image: 'image1.jpg', 
-                description: 'Carte cadeau Amazon d\'une valeur de 50 USD. Parfaite pour un petit cadeau ou pour tester la plateforme Amazon. Vous pourrez acheter des accessoires, des livres, de la musique ou des petits appareils électroniques avec cette carte cadeau pratique.', 
+                description: 'Amazon gift card with a value of 50 USD. Perfect for a small gift or to test the Amazon platform. You can buy accessories, books, music or small electronic devices with this practical gift card.', 
                 offersRequired: 1 
             },
             { 
@@ -596,7 +605,7 @@
                 title: 'Amazon $25 Gift Card', 
                 value: '$25', 
                 image: 'image1.jpg', 
-                description: 'Carte cadeau Amazon d\'une valeur de 25 USD. Excellente pour un petit plaisir ou un cadeau de dernière minute. Cette carte vous permet d\'acheter un livre, un accessoire ou un petit gadget sur Amazon sans engager de frais supplémentaires.', 
+                description: 'Amazon gift card with a value of 25 USD. Excellent for a small treat or a last-minute gift. This card allows you to buy a book, an accessory or a small gadget on Amazon without incurring additional costs.', 
                 offersRequired: 1 
             },
             { 
@@ -605,7 +614,7 @@
                 title: 'Amazon $10 Gift Card', 
                 value: '$10', 
                 image: 'image1.jpg', 
-                description: 'Carte cadeau Amazon d\'une valeur de 10 USD. Idéale pour un petit achat ou pour compléter un budget. Parfaite pour acheter un ebook, une application ou un petit accessoire sur la plateforme Amazon.', 
+                description: 'Amazon gift card with a value of 10 USD. Ideal for a small purchase or to complete a budget. Perfect for buying an ebook, an app or a small accessory on the Amazon platform.', 
                 offersRequired: 1 
             },
             { 
@@ -614,7 +623,7 @@
                 title: 'Amazon $5 Gift Card', 
                 value: '$5', 
                 image: 'image1.jpg', 
-                description: 'Carte cadeau Amazon d\'une valeur de 5 USD. Parfaite pour un tout petit achat ou pour tester le système de cartes cadeaux Amazon. Idéale pour les petits achats numériques comme les livres électroniques ou les applications.', 
+                description: 'Amazon gift card with a value of 5 USD. Perfect for a very small purchase or to test the Amazon gift card system. Ideal for small digital purchases like e-books or apps.', 
                 offersRequired: 1 
             },
             
@@ -625,7 +634,7 @@
                 title: 'Netflix $1000 Gift Card', 
                 value: '$1000', 
                 image: 'image2.jpg', 
-                description: 'Carte cadeau Netflix d\'une valeur de 1000 USD. Cette carte premium vous offre plusieurs années d\'abonnement selon le forfait choisi. Profitez de tous les contenus exclusifs Netflix, des séries originales aux films blockbusters, sans engagement mensuel.', 
+                description: 'Netflix gift card with a value of 1000 USD. This premium card gives you several years of subscription depending on the plan chosen. Enjoy all exclusive Netflix content, from original series to blockbuster movies, without monthly commitment.', 
                 offersRequired: 3 
             },
             { 
@@ -634,7 +643,7 @@
                 title: 'Netflix $500 Gift Card', 
                 value: '$500', 
                 image: 'image2.jpg', 
-                description: 'Carte cadeau Netflix d\'une valeur de 500 USD. Offre une longue période d\'abonnement premium. Accédez à des milliers de films, séries et documentaires en qualité Ultra HD sur tous vos appareils simultanément.', 
+                description: 'Netflix gift card with a value of 500 USD. Offers a long period of premium subscription. Access thousands of movies, series and documentaries in Ultra HD quality on all your devices simultaneously.', 
                 offersRequired: 2 
             },
             { 
@@ -643,7 +652,7 @@
                 title: 'Netflix $100 Gift Card', 
                 value: '$100', 
                 image: 'image2.jpg', 
-                description: 'Carte cadeau Netflix d\'une valeur de 100 USD. Offre plusieurs mois d\'abonnement selon le forfait choisi. Avec cette carte, vous pourrez profiter de tous les contenus exclusifs Netflix, des séries originales aux films blockbusters, sans engagement mensuel.', 
+                description: 'Netflix gift card with a value of 100 USD. Offers several months of subscription depending on the chosen plan. With this card, you can enjoy all exclusive Netflix content, from original series to blockbuster movies, without monthly commitment.', 
                 offersRequired: 1 
             },
             { 
@@ -652,7 +661,7 @@
                 title: 'Netflix $50 Gift Card', 
                 value: '$50', 
                 image: 'image2.jpg', 
-                description: 'Carte cadeau Netflix d\'une valeur de 50 USD. Parfaite pour offrir plusieurs mois de divertissement en streaming de qualité. Accédez à des milliers de films, séries et documentaires en haute définition sur tous vos appareils.', 
+                description: 'Netflix gift card with a value of 50 USD. Perfect for giving several months of quality streaming entertainment. Access thousands of movies, series and documentaries in high definition on all your devices.', 
                 offersRequired: 1 
             },
             { 
@@ -661,7 +670,7 @@
                 title: 'Netflix $25 Gift Card', 
                 value: '$25', 
                 image: 'image2.jpg', 
-                description: 'Carte cadeau Netflix d\'une valeur de 25 USD. Idéale pour un cadeau ou pour prolonger votre abonnement. Profitez du streaming sans publicité et téléchargez vos contenus préférés pour les regarder hors ligne.', 
+                description: 'Netflix gift card with a value of 25 USD. Ideal for a gift or to extend your subscription. Enjoy ad-free streaming and download your favorite content to watch offline.', 
                 offersRequired: 1 
             },
             { 
@@ -670,7 +679,7 @@
                 title: 'Netflix $15 Gift Card', 
                 value: '$15', 
                 image: 'image2.jpg', 
-                description: 'Carte cadeau Netflix d\'une valeur de 15 USD. Parfaite pour un mois d\'abonnement ou en complément. Accédez à la bibliothèque complète de Netflix et découvrez de nouveaux contenus chaque semaine.', 
+                description: 'Netflix gift card with a value of 15 USD. Perfect for one month of subscription or as a complement. Access the complete Netflix library and discover new content every week.', 
                 offersRequired: 1 
             },
             
@@ -681,7 +690,7 @@
                 title: 'iTunes $1000 Gift Card', 
                 value: '$1000', 
                 image: 'image3.jpg', 
-                description: 'Carte cadeau iTunes d\'une valeur de 1000 USD. Cette carte premium vous donne accès à l\'ensemble de l\'écosystème Apple. Utilisable pour acheter de la musique, des films, des applications, des jeux, des livres et des abonnements sur l\'App Store, iTunes Store et Apple Books.', 
+                description: 'iTunes gift card with a value of 1000 USD. This premium card gives you access to the entire Apple ecosystem. Usable to purchase music, movies, apps, games, books and subscriptions on the App Store, iTunes Store and Apple Books.', 
                 offersRequired: 3 
             },
             { 
@@ -690,7 +699,7 @@
                 title: 'iTunes $500 Gift Card', 
                 value: '$500', 
                 image: 'image3.jpg', 
-                description: 'Carte cadeau iTunes d\'une valeur de 500 USD. Idéale pour les amateurs de contenu numérique Apple. Achetez des applications premium, des jeux, des films, de la musique et abonnez-vous aux services Apple avec cette carte généreuse.', 
+                description: 'iTunes gift card with a value of 500 USD. Ideal for Apple digital content enthusiasts. Buy premium apps, games, movies, music and subscribe to Apple services with this generous card.', 
                 offersRequired: 2 
             },
             { 
@@ -699,7 +708,7 @@
                 title: 'iTunes $100 Gift Card', 
                 value: '$100', 
                 image: 'image3.jpg', 
-                description: 'Carte cadeau iTunes d\'une valeur de 100 USD. Utilisable pour acheter de la musique, des films, des applications, des jeux et des livres sur l\'App Store, iTunes Store et Apple Books. Parfaite pour les amateurs de contenu numérique Apple.', 
+                description: 'iTunes gift card with a value of 100 USD. Usable to purchase music, movies, apps, games and books on the App Store, iTunes Store and Apple Books. Perfect for Apple digital content enthusiasts.', 
                 offersRequired: 1 
             },
             { 
@@ -708,7 +717,7 @@
                 title: 'iTunes $50 Gift Card', 
                 value: '$50', 
                 image: 'image3.jpg', 
-                description: 'Carte cadeau iTunes d\'une valeur de 50 USD. Idéale pour faire le plein de divertissement numérique. Achetez les dernières applications, les films du moment ou abonnez-vous à Apple Music pour profiter de millions de chansons.', 
+                description: 'iTunes gift card with a value of 50 USD. Ideal for stocking up on digital entertainment. Buy the latest apps, current movies or subscribe to Apple Music to enjoy millions of songs.', 
                 offersRequired: 1 
             },
             { 
@@ -717,7 +726,7 @@
                 title: 'iTunes $25 Gift Card', 
                 value: '$25', 
                 image: 'image3.jpg', 
-                description: 'Carte cadeau iTunes d\'une valeur de 25 USD. Parfaite pour découvrir l\'écosystème Apple ou offrir en cadeau. Utilisez-la pour acheter des applications premium, des albums musicaux ou des films en location.', 
+                description: 'iTunes gift card with a value of 25 USD. Perfect for discovering the Apple ecosystem or giving as a gift. Use it to purchase premium apps, music albums or rent movies.', 
                 offersRequired: 1 
             },
             { 
@@ -726,7 +735,7 @@
                 title: 'iTunes $15 Gift Card', 
                 value: '$15', 
                 image: 'image3.jpg', 
-                description: 'Carte cadeau iTunes d\'une valeur de 15 USD. Idéale pour un petit achat ou un complément de budget. Parfaite pour acheter quelques applications utiles ou quelques albums de musique.', 
+                description: 'iTunes gift card with a value of 15 USD. Ideal for a small purchase or a budget supplement. Perfect for buying a few useful apps or a few music albums.', 
                 offersRequired: 1 
             },
             { 
@@ -735,7 +744,7 @@
                 title: 'iTunes $10 Gift Card', 
                 value: '$10', 
                 image: 'image3.jpg', 
-                description: 'Carte cadeau iTunes d\'une valeur de 10 USD. Parfaite pour acheter quelques applications ou chansons. Utilisez-la également pour vous abonner à des services comme Apple Music ou Apple Arcade.', 
+                description: 'iTunes gift card with a value of 10 USD. Perfect for buying a few apps or songs. Also use it to subscribe to services like Apple Music or Apple Arcade.', 
                 offersRequired: 1 
             },
             { 
@@ -744,7 +753,7 @@
                 title: 'iTunes $5 Gift Card', 
                 value: '$5', 
                 image: 'image3.jpg', 
-                description: 'Carte cadeau iTunes d\'une valeur de 5 USD. Idéale pour un petit achat ou pour tester le système. Parfaite pour acheter une application simple ou une chanson populaire.', 
+                description: 'iTunes gift card with a value of 5 USD. Ideal for a small purchase or to test the system. Perfect for buying a simple app or a popular song.', 
                 offersRequired: 1 
             },
             
@@ -755,7 +764,7 @@
                 title: 'Google Play $1000 Gift Card', 
                 value: '$1000', 
                 image: 'image4.jpg', 
-                description: 'Carte cadeau Google Play d\'une valeur de 1000 USD. Cette carte premium vous donne accès à l\'ensemble de l\'écosystème Google. Utilisable pour acheter des applications, des jeux, des films, de la musique, des livres et des abonnements sur le Google Play Store.', 
+                description: 'Google Play gift card with a value of 1000 USD. This premium card gives you access to the entire Google ecosystem. Usable to purchase apps, games, movies, music, books and subscriptions on the Google Play Store.', 
                 offersRequired: 3 
             },
             { 
@@ -764,7 +773,7 @@
                 title: 'Google Play $500 Gift Card', 
                 value: '$500', 
                 image: 'image4.jpg', 
-                description: 'Carte cadeau Google Play d\'une valeur de 500 USD. Idéale pour les amateurs de contenu numérique Android. Achetez des applications premium, des jeux, des films, de la musique et abonnez-vous aux services Google avec cette carte généreuse.', 
+                description: 'Google Play gift card with a value of 500 USD. Ideal for Android digital content enthusiasts. Buy premium apps, games, movies, music and subscribe to Google services with this generous card.', 
                 offersRequired: 2 
             },
             { 
@@ -773,7 +782,7 @@
                 title: 'Google Play $100 Gift Card', 
                 value: '$100', 
                 image: 'image4.jpg', 
-                description: 'Carte cadeau Google Play d\'une valeur de 100 USD. Utilisable pour acheter des applications, des jeux, des films, de la musique et des livres sur le Google Play Store. Parfaite pour les utilisateurs d\'appareils Android.', 
+                description: 'Google Play gift card with a value of 100 USD. Usable to purchase apps, games, movies, music and books on the Google Play Store. Perfect for Android device users.', 
                 offersRequired: 1 
             },
             { 
@@ -782,7 +791,7 @@
                 title: 'Google Play $50 Gift Card', 
                 value: '$50', 
                 image: 'image4.jpg', 
-                description: 'Carte cadeau Google Play d\'une valeur de 50 USD. Idéale pour faire le plein de divertissement numérique. Achetez les dernières applications, les jeux populaires ou abonnez-vous à YouTube Premium pour profiter de millions de vidéos sans publicité.', 
+                description: 'Google Play gift card with a value of 50 USD. Ideal for stocking up on digital entertainment. Buy the latest apps, popular games or subscribe to YouTube Premium to enjoy millions of videos without ads.', 
                 offersRequired: 1 
             },
             { 
@@ -791,7 +800,7 @@
                 title: 'Google Play $25 Gift Card', 
                 value: '$25', 
                 image: 'image4.jpg', 
-                description: 'Carte cadeau Google Play d\'une valeur de 25 USD. Parfaite pour découvrir l\'écosystème Android ou offrir en cadeau. Utilisez-la pour acheter des applications premium, des albums musicaux ou des films en location.', 
+                description: 'Google Play gift card with a value of 25 USD. Perfect for discovering the Android ecosystem or giving as a gift. Use it to purchase premium apps, music albums or rent movies.', 
                 offersRequired: 1 
             },
             { 
@@ -800,7 +809,7 @@
                 title: 'Google Play $15 Gift Card', 
                 value: '$15', 
                 image: 'image4.jpg', 
-                description: 'Carte cadeau Google Play d\'une valeur de 15 USD. Idéale pour un petit achat ou un complément de budget. Parfaite pour acheter quelques applications utiles ou quelques albums de musique.', 
+                description: 'Google Play gift card with a value of 15 USD. Ideal for a small purchase or a budget supplement. Perfect for buying a few useful apps or a few music albums.', 
                 offersRequired: 1 
             },
             { 
@@ -809,7 +818,7 @@
                 title: 'Google Play $10 Gift Card', 
                 value: '$10', 
                 image: 'image4.jpg', 
-                description: 'Carte cadeau Google Play d\'une valeur de 10 USD. Parfaite pour acheter quelques applications ou chansons. Utilisez-la également pour vous abonner à des services comme YouTube Music ou Google One.', 
+                description: 'Google Play gift card with a value of 10 USD. Perfect for buying a few apps or songs. Also use it to subscribe to services like YouTube Music or Google One.', 
                 offersRequired: 1 
             },
             { 
@@ -818,24 +827,24 @@
                 title: 'Google Play $5 Gift Card', 
                 value: '$5', 
                 image: 'image4.jpg', 
-                description: 'Carte cadeau Google Play d\'une valeur de 5 USD. Idéale pour un petit achat ou pour tester le système. Parfaite pour acheter une application simple ou une chanson populaire.', 
+                description: 'Google Play gift card with a value of 5 USD. Ideal for a small purchase or to test the system. Perfect for buying a simple app or a popular song.', 
                 offersRequired: 1 
             }
         ];
 
-        // Trier les cartes par valeur (décroissante)
+        // Sort cards by value (descending)
         giftCards.sort((a, b) => {
-            // Extraire la valeur numérique de la chaîne de valeur
+            // Extract numeric value from value string
             const valueA = parseInt(a.value.replace('$', ''));
             const valueB = parseInt(b.value.replace('$', ''));
             return valueB - valueA;
         });
 
-        // Variables pour la pagination
+        // Variables for pagination
         const cardsPerPage = 12;
         let currentPage = 1;
 
-        // Éléments DOM
+        // DOM Elements
         const cardsContainer = document.getElementById('cardsContainer');
         const paginationContainer = document.getElementById('pagination');
         const modal = document.getElementById('cardModal');
@@ -847,9 +856,9 @@
         const offersRequired = document.getElementById('offersRequired');
         const modalButton = document.getElementById('modalButton');
 
-        // Fonction pour afficher les cartes de la page actuelle
+        // Function to display cards for the current page
         function displayCards() {
-            // Ajouter une animation de fondu
+            // Add fade animation
             cardsContainer.classList.add('fade-out');
             
             setTimeout(() => {
@@ -871,8 +880,8 @@
                             <h3 class="card-title">${card.title}</h3>
                             <div class="card-value">${card.value}</div>
                             <div class="card-actions">
-                                <button class="btn btn-primary" data-id="${card.id}"><i class="fas fa-gift"></i> Obtenir</button>
-                                <button class="btn btn-icon view-details" data-id="${card.id}" title="Voir les détails">
+                                <button class="btn btn-primary" data-id="${card.id}"><i class="fas fa-gift"></i> Get</button>
+                                <button class="btn btn-icon view-details" data-id="${card.id}" title="View details">
                                     <i class="fas fa-eye"></i>
                                 </button>
                             </div>
@@ -882,19 +891,19 @@
                     cardsContainer.appendChild(cardElement);
                 });
                 
-                // Retirer la classe de fondu
+                // Remove fade class
                 cardsContainer.classList.remove('fade-out');
                 
-                // Ajouter les écouteurs d'événements pour les boutons "Obtenir"
+                // Add event listeners for "Get" buttons
                 document.querySelectorAll('.btn-primary').forEach(button => {
                     button.addEventListener('click', function() {
                         const cardId = parseInt(this.getAttribute('data-id'));
                         const card = giftCards.find(c => c.id === cardId);
-                        alert(`Vous avez sélectionné: ${card.title}`);
+                        alert(`You have selected: ${card.title}`);
                     });
                 });
                 
-                // Ajouter les écouteurs d'événements pour les boutons "Voir détails"
+                // Add event listeners for "View details" buttons
                 document.querySelectorAll('.view-details').forEach(button => {
                     button.addEventListener('click', function() {
                         const cardId = parseInt(this.getAttribute('data-id'));
@@ -904,7 +913,7 @@
             }, 300);
         }
 
-        // Fonction pour ouvrir le modal avec les détails de la carte
+        // Function to open modal with card details
         function openModal(cardId) {
             const card = giftCards.find(c => c.id === cardId);
             
@@ -914,17 +923,17 @@
             modalValue.textContent = card.value;
             modalDescription.textContent = card.description;
             
-            // Appliquer la classe Google Play au modal si nécessaire
+            // Apply Google Play class to modal if necessary
             modal.querySelector('.modal-content').classList.remove('googleplay');
             if (card.type === 'GooglePlay') {
                 modal.querySelector('.modal-content').classList.add('googleplay');
             }
             
-            // Afficher le nombre d'offres à valider
+            // Display number of offers to complete
             if (card.offersRequired === 1) {
-                offersRequired.innerHTML = `<strong>Offre à valider:</strong> 1 offre de 10 secondes`;
+                offersRequired.innerHTML = `<strong>Offer to complete:</strong> 1 offer of 10 seconds`;
             } else {
-                offersRequired.innerHTML = `<strong>Offres à valider:</strong> ${card.offersRequired} offres de 10 secondes`;
+                offersRequired.innerHTML = `<strong>Offers to complete:</strong> ${card.offersRequired} offers of 10 seconds`;
             }
             
             modalButton.setAttribute('data-id', card.id);
@@ -932,7 +941,7 @@
             modal.style.display = 'flex';
         }
 
-        // Fonction pour générer la pagination
+        // Function to generate pagination
         function setupPagination() {
             paginationContainer.innerHTML = '';
             
@@ -948,7 +957,7 @@
                     displayCards();
                     setupPagination();
                     
-                    // Faire défiler vers le haut de la page
+                    // Scroll to top of page
                     window.scrollTo({
                         top: 0,
                         behavior: 'smooth'
@@ -959,27 +968,27 @@
             }
         }
 
-        // Écouteur d'événement pour fermer le modal
+        // Event listener to close modal
         closeModal.addEventListener('click', function() {
             modal.style.display = 'none';
         });
 
-        // Écouteur d'événement pour le bouton "Obtenir" dans le modal
+        // Event listener for "Get" button in modal
         modalButton.addEventListener('click', function() {
             const cardId = parseInt(this.getAttribute('data-id'));
             const card = giftCards.find(c => c.id === cardId);
-            alert(`Vous avez sélectionné: ${card.title}`);
+            alert(`You have selected: ${card.title}`);
             modal.style.display = 'none';
         });
 
-        // Fermer le modal en cliquant en dehors
+        // Close modal by clicking outside
         window.addEventListener('click', function(event) {
             if (event.target === modal) {
                 modal.style.display = 'none';
             }
         });
 
-        // Initialiser l'affichage
+        // Initialize display
         displayCards();
         setupPagination();
     </script>
