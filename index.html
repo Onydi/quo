@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Christmas Gift Cards</title>
+    <title>Premium Fiverr Services</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -37,7 +37,7 @@
         header {
             background: 
                 linear-gradient(135deg, rgba(26, 115, 232, 0.85), rgba(135, 206, 235, 0.85)),
-                url('https://images.unsplash.com/photo-1546387903-6d82d96ccca6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80');
+                url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -79,7 +79,7 @@
             font-weight: 500;
         }
 
-        .christmas-decoration {
+        .decoration {
             position: absolute;
             width: 40px;
             height: 40px;
@@ -91,7 +91,7 @@
         .decoration-1 {
             top: 20%;
             left: 10%;
-            background: #e74c3c;
+            background: #1DBF73;
             animation-delay: 0s;
         }
 
@@ -162,20 +162,24 @@
             background: linear-gradient(90deg, var(--blue), var(--sky-blue));
         }
 
-        .card.amazon::before {
+        .card.design::before {
             background: linear-gradient(90deg, #FF9900, #FFC107);
         }
 
-        .card.netflix::before {
+        .card.programming::before {
             background: linear-gradient(90deg, #E50914, #B81D24);
         }
 
-        .card.itunes::before {
+        .card.marketing::before {
             background: linear-gradient(90deg, #FB5BC5, #8A2BE2);
         }
 
-        .card.googleplay::before {
+        .card.writing::before {
             background: linear-gradient(90deg, #34A853, #0F9D58);
+        }
+
+        .card.video::before {
+            background: linear-gradient(90deg, #FF69B4, #FF1493);
         }
 
         @keyframes fadeIn {
@@ -234,6 +238,13 @@
             color: var(--dark-gray);
         }
 
+        .card-value {
+            color: #1DBF73;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
         .card-actions {
             display: flex;
             justify-content: space-between;
@@ -255,14 +266,14 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--blue), #0d5bb9);
+            background: linear-gradient(135deg, #1DBF73, #19a463);
             color: var(--white);
-            box-shadow: 0 2px 5px rgba(26, 115, 232, 0.3);
+            box-shadow: 0 2px 5px rgba(29, 191, 115, 0.3);
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(26, 115, 232, 0.4);
+            box-shadow: 0 4px 8px rgba(29, 191, 115, 0.4);
         }
 
         .btn-icon {
@@ -287,13 +298,13 @@
             box-shadow: 0 4px 8px rgba(26, 115, 232, 0.3);
         }
 
-        .btn-gift {
+        .btn-service {
             background: linear-gradient(135deg, var(--purple), #7a1fd2);
             color: white;
             box-shadow: 0 2px 5px rgba(138, 43, 226, 0.3);
         }
 
-        .btn-gift:hover {
+        .btn-service:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(138, 43, 226, 0.4);
         }
@@ -396,16 +407,16 @@
 
         .modal-value {
             font-size: 1.2rem;
-            color: var(--blue);
+            color: #1DBF73;
             margin-bottom: 1rem;
             font-weight: 600;
-            background: linear-gradient(135deg, #e8f4fd, #f0f8ff);
+            background: linear-gradient(135deg, #e8f8f0, #f0fcf5);
             padding: 0.5rem 1rem;
             border-radius: 8px;
             display: inline-block;
         }
 
-        .modal.googleplay .modal-value {
+        .modal.writing .modal-value {
             color: #34A853;
             background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
         }
@@ -416,7 +427,7 @@
             color: #555;
         }
 
-        .offers-required {
+        .delivery-time {
             background: linear-gradient(135deg, #e8f4fd, #f0f8ff);
             border-left: 4px solid var(--blue);
             padding: 0.8rem;
@@ -424,8 +435,22 @@
             border-radius: 0 8px 8px 0;
         }
 
-        .offers-required strong {
+        .delivery-time strong {
             color: var(--blue);
+        }
+
+        .features {
+            margin-bottom: 1.5rem;
+        }
+
+        .features ul {
+            padding-left: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        .features li {
+            margin-bottom: 0.5rem;
+            color: #555;
         }
 
         .modal-actions {
@@ -457,12 +482,12 @@
         }
 
         .pagination button.active {
-            background: linear-gradient(135deg, var(--blue), #0d5bb9);
+            background: linear-gradient(135deg, #1DBF73, #19a463);
             color: var(--white);
         }
 
         .pagination button:hover:not(.active) {
-            background-color: var(--sky-blue);
+            background-color: #1DBF73;
             color: var(--white);
             transform: translateY(-2px);
         }
@@ -512,7 +537,7 @@
                 font-size: 1rem;
             }
             
-            .christmas-decoration {
+            .decoration {
                 width: 30px;
                 height: 30px;
             }
@@ -541,7 +566,7 @@
                 justify-content: center;
             }
             
-            .christmas-decoration {
+            .decoration {
                 width: 20px;
                 height: 20px;
             }
@@ -558,13 +583,13 @@
 </head>
 <body>
     <header>
-        <div class="christmas-decoration decoration-1"></div>
-        <div class="christmas-decoration decoration-2"></div>
-        <div class="christmas-decoration decoration-3"></div>
-        <div class="christmas-decoration decoration-4"></div>
+        <div class="decoration decoration-1"></div>
+        <div class="decoration decoration-2"></div>
+        <div class="decoration decoration-3"></div>
+        <div class="decoration decoration-4"></div>
         
-        <h1><i class="fas fa-gift"></i> Free Christmas Gift Cards</h1>
-        <p>Discover our exclusive selection of free gift cards for Amazon, Netflix, iTunes and Google Play</p>
+        <h1><i class="fas fa-briefcase"></i> Premium Fiverr Services</h1>
+        <p>Discover our exclusive selection of professional services from top-rated Fiverr freelancers</p>
     </header>
 
     <div class="container">
@@ -577,23 +602,31 @@
         </div>
     </div>
 
-    <!-- Modal to display card details -->
-    <div class="modal" id="cardModal">
+    <!-- Modal to display service details -->
+    <div class="modal" id="serviceModal">
         <div class="modal-content">
             <button class="modal-close" id="closeModal">&times;</button>
             <div class="modal-body">
                 <div class="modal-image">
-                    <img id="modalImage" src="" alt="Gift card">
+                    <img id="modalImage" src="" alt="Service">
                 </div>
                 <div class="modal-details">
                     <h2 class="modal-title" id="modalTitle"></h2>
                     <div class="modal-value" id="modalValue"></div>
                     <p class="modal-description" id="modalDescription"></p>
-                    <div class="offers-required" id="offersRequired">
-                        <!-- Number of offers to complete will be added dynamically -->
+                    
+                    <div class="features">
+                        <strong>What's included:</strong>
+                        <ul id="modalFeatures">
+                            <!-- Features will be added dynamically -->
+                        </ul>
+                    </div>
+                    
+                    <div class="delivery-time" id="deliveryTime">
+                        <!-- Delivery time will be added dynamically -->
                     </div>
                     <div class="modal-actions">
-                        <a href="https://rileymarker.com/1858514" class="btn btn-primary" id="modalButton" target="_blank"><i class="fas fa-gift"></i> Get Now</a>
+                        <a href="#" class="btn btn-primary" id="modalButton" target="_blank"><i class="fas fa-shopping-cart"></i> Order Now on Fiverr</a>
                     </div>
                 </div>
             </div>
@@ -601,297 +634,356 @@
     </div>
 
     <footer>
-        <p>&copy; 2023 Free Christmas Gift Cards. All rights reserved.</p>
+        <p>&copy; 2023 Premium Fiverr Services. All rights reserved.</p>
     </footer>
 
     <script>
-        // Gift card data with detailed descriptions
-        
-        const giftCards = [
-            // Amazon
+        // Fiverr services data with detailed descriptions
+        const fiverrServices = [
+            // Design Services
             { 
                 id: 1, 
-                type: 'Amazon', 
-                title: 'Amazon $1000 Gift Card', 
-                value: '$1000', 
-                image: 'image1.jpg', 
-                description: 'Amazon gift card with a value of 1000 USD. This premium gift card gives you access to millions of products on Amazon.com, from electronics to clothing to household items. Perfect for large purchases or as an exceptional gift for special occasions.', 
+                type: 'design', 
+                title: 'Professional Logo Design', 
+                value: '$299', 
+                image: 'https://images.unsplash.com/photo-1634942537034-2531766767d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1522&q=80', 
+                description: 'Get a custom, professional logo design that perfectly represents your brand. Includes 3 initial concepts, unlimited revisions, and delivery in multiple file formats. Perfect for startups, businesses, and personal brands looking to establish a strong visual identity.', 
+                features: ['3 initial logo concepts', 'Unlimited revisions', 'Vector files (AI, EPS, SVG)', 'PNG & JPG files', 'Source files included', '72-hour delivery'],
+                deliveryTime: '3-5 days',
                 offersRequired: 2 
             },
             { 
                 id: 2, 
-                type: 'Amazon', 
-                title: 'Amazon $500 Gift Card', 
-                value: '$500', 
-                image: 'image1.jpg', 
-                description: 'Amazon gift card with a value of 500 USD. A generous amount that will allow you to stock up on your favorite products or give a high-value gift. Usable on all eligible Amazon products, including books, electronics, video games and much more.', 
+                type: 'design', 
+                title: 'Complete Brand Identity Package', 
+                value: '$499', 
+                image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1664&q=80', 
+                description: 'Full brand identity package including logo design, color palette, typography, business cards, letterhead, and brand guidelines. Everything you need to establish a consistent and professional brand presence across all platforms.', 
+                features: ['Complete logo design', 'Brand style guide', 'Business card design', 'Letterhead design', 'Color palette', 'Typography selection'],
+                deliveryTime: '5-7 days',
                 offersRequired: 2 
             },
             { 
                 id: 3, 
-                type: 'Amazon', 
-                title: 'Amazon $250 Gift Card', 
-                value: '$250', 
-                image: 'image1.jpg', 
-                description: 'Amazon gift card with a value of 250 USD. An excellent way to discover the wide range of products available on Amazon or to please a loved one. This card is perfect for medium purchases like electronics, brand name clothing or home items.', 
-                offersRequired: 1 
+                type: 'design', 
+                title: 'Website UI/UX Design', 
+                value: '$799', 
+                image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80', 
+                description: 'Professional website UI/UX design for desktop and mobile. Includes wireframes, mockups, and interactive prototypes. Perfect for businesses looking to create a user-friendly and visually appealing website that converts visitors into customers.', 
+                features: ['Wireframing', 'UI design', 'UX optimization', 'Mobile responsive', 'Interactive prototype', 'Design system'],
+                deliveryTime: '7-10 days',
+                offersRequired: 3 
             },
             { 
                 id: 4, 
-                type: 'Amazon', 
-                title: 'Amazon $100 Gift Card', 
-                value: '$100', 
-                image: 'image1.jpg', 
-                description: 'Amazon gift card with a value of 100 USD. Ideal for completing your shopping budget or for giving as a gift. With this card, you can buy books, electronic accessories, cosmetics or even video games on the Amazon platform.', 
+                type: 'design', 
+                title: 'Social Media Graphics Package', 
+                value: '$149', 
+                image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1738&q=80', 
+                description: 'Custom social media graphics package including posts for Instagram, Facebook, Twitter, and LinkedIn. Professionally designed to engage your audience and increase your social media presence.', 
+                features: ['15 custom graphics', 'All platform sizes', 'Instagram story templates', 'Brand consistency', 'Source files included', 'Unlimited revisions'],
+                deliveryTime: '2-3 days',
                 offersRequired: 1 
             },
             { 
                 id: 5, 
-                type: 'Amazon', 
-                title: 'Amazon $50 Gift Card', 
-                value: '$50', 
-                image: 'image1.jpg', 
-                description: 'Amazon gift card with a value of 50 USD. Perfect for a small gift or to test the Amazon platform. You can buy accessories, books, music or small electronic devices with this practical gift card.', 
-                offersRequired: 1 
+                type: 'design', 
+                title: 'Product Packaging Design', 
+                value: '$399', 
+                image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80', 
+                description: 'Eye-catching product packaging design that stands out on shelves and attracts customers. Includes 3D mockups and print-ready files. Perfect for physical products looking to make a great first impression.', 
+                features: ['3 design concepts', '3D mockups', 'Print-ready files', 'Die-line creation', 'Unlimited revisions', 'Source files included'],
+                deliveryTime: '5-7 days',
+                offersRequired: 2 
             },
             { 
                 id: 6, 
-                type: 'Amazon', 
-                title: 'Amazon $25 Gift Card', 
-                value: '$25', 
-                image: 'image1.jpg', 
-                description: 'Amazon gift card with a value of 25 USD. Excellent for a small treat or a last-minute gift. This card allows you to buy a book, an accessory or a small gadget on Amazon without incurring additional costs.', 
+                type: 'design', 
+                title: 'Custom Illustration Set', 
+                value: '$249', 
+                image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80', 
+                description: 'Set of custom illustrations tailored to your brand style. Perfect for websites, apps, presentations, and marketing materials. Includes commercial usage rights.', 
+                features: ['5 custom illustrations', 'Multiple file formats', 'Commercial license', 'Unlimited revisions', 'Vector files included', 'Style consistency'],
+                deliveryTime: '4-6 days',
                 offersRequired: 1 
             },
             { 
                 id: 7, 
-                type: 'Amazon', 
-                title: 'Amazon $10 Gift Card', 
-                value: '$10', 
-                image: 'image1.jpg', 
-                description: 'Amazon gift card with a value of 10 USD. Ideal for a small purchase or to complete a budget. Perfect for buying an ebook, an app or a small accessory on the Amazon platform.', 
+                type: 'design', 
+                title: 'Infographic Design', 
+                value: '$199', 
+                image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80', 
+                description: 'Professional infographic design that transforms complex data into visually appealing and easy-to-understand graphics. Perfect for reports, presentations, and social media content.', 
+                features: ['Custom design', 'Data visualization', 'Multiple formats', 'Source files', 'Unlimited revisions', 'Print & digital versions'],
+                deliveryTime: '3-4 days',
                 offersRequired: 1 
             },
             { 
                 id: 8, 
-                type: 'Amazon', 
-                title: 'Amazon $5 Gift Card', 
-                value: '$5', 
-                image: 'image1.jpg', 
-                description: 'Amazon gift card with a value of 5 USD. Perfect for a very small purchase or to test the Amazon gift card system. Ideal for small digital purchases like e-books or apps.', 
+                type: 'design', 
+                title: 'Business Presentation Design', 
+                value: '$179', 
+                image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80', 
+                description: 'Professionally designed business presentation that communicates your message effectively. Includes custom slides, icons, and data visualization. Perfect for investors, clients, or internal meetings.', 
+                features: ['15 custom slides', 'Editable PowerPoint', 'Custom icons', 'Data visualization', 'Brand consistency', 'Unlimited revisions'],
+                deliveryTime: '3-5 days',
                 offersRequired: 1 
             },
             
-            // Netflix
+            // Programming Services
             { 
                 id: 9, 
-                type: 'Netflix', 
-                title: 'Netflix $1000 Gift Card', 
-                value: '$1000', 
-                image: 'image2.jpg', 
-                description: 'Netflix gift card with a value of 1000 USD. This premium card gives you several years of subscription depending on the plan chosen. Enjoy all exclusive Netflix content, from original series to blockbuster movies, without monthly commitment.', 
+                type: 'programming', 
+                title: 'Custom Website Development', 
+                value: '$1999', 
+                image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80', 
+                description: 'Fully custom website development with responsive design, CMS integration, and SEO optimization. Built with modern technologies and best practices for performance and security.', 
+                features: ['Custom design implementation', 'Responsive development', 'CMS integration', 'SEO optimization', 'Contact forms', 'Performance optimization'],
+                deliveryTime: '14-21 days',
                 offersRequired: 3 
             },
             { 
                 id: 10, 
-                type: 'Netflix', 
-                title: 'Netflix $500 Gift Card', 
-                value: '$500', 
-                image: 'image2.jpg', 
-                description: 'Netflix gift card with a value of 500 USD. Offers a long period of premium subscription. Access thousands of movies, series and documentaries in Ultra HD quality on all your devices simultaneously.', 
+                type: 'programming', 
+                title: 'WordPress Website Development', 
+                value: '$899', 
+                image: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80', 
+                description: 'Professional WordPress website development with custom theme, plugins, and functionality. Includes setup, customization, and training. Perfect for businesses needing a powerful, easy-to-manage website.', 
+                features: ['Custom WordPress theme', 'Plugin integration', 'Mobile responsive', 'SEO optimized', 'Training included', '6 months support'],
+                deliveryTime: '10-14 days',
                 offersRequired: 2 
             },
             { 
                 id: 11, 
-                type: 'Netflix', 
-                title: 'Netflix $100 Gift Card', 
-                value: '$100', 
-                image: 'image2.jpg', 
-                description: 'Netflix gift card with a value of 100 USD. Offers several months of subscription depending on the chosen plan. With this card, you can enjoy all exclusive Netflix content, from original series to blockbuster movies, without monthly commitment.', 
-                offersRequired: 1 
+                type: 'programming', 
+                title: 'E-commerce Website Development', 
+                value: '$1499', 
+                image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80', 
+                description: 'Full-featured e-commerce website with shopping cart, payment integration, product management, and inventory system. Built with WooCommerce, Shopify, or custom solution.', 
+                features: ['Product management', 'Payment gateway integration', 'Shopping cart', 'User accounts', 'Order tracking', 'Inventory management'],
+                deliveryTime: '15-20 days',
+                offersRequired: 3 
             },
             { 
                 id: 12, 
-                type: 'Netflix', 
-                title: 'Netflix $50 Gift Card', 
-                value: '$50', 
-                image: 'image2.jpg', 
-                description: 'Netflix gift card with a value of 50 USD. Perfect for giving several months of quality streaming entertainment. Access thousands of movies, series and documentaries in high definition on all your devices.', 
-                offersRequired: 1 
+                type: 'programming', 
+                title: 'Custom Web Application', 
+                value: '$2999', 
+                image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80', 
+                description: 'Custom web application built to solve your specific business needs. Includes requirements analysis, development, testing, and deployment. Built with modern frameworks like React, Angular, or Vue.js.', 
+                features: ['Requirements analysis', 'Custom development', 'User authentication', 'Database design', 'API integration', 'Testing & deployment'],
+                deliveryTime: '30-45 days',
+                offersRequired: 4 
             },
             { 
                 id: 13, 
-                type: 'Netflix', 
-                title: 'Netflix $25 Gift Card', 
-                value: '$25', 
-                image: 'image2.jpg', 
-                description: 'Netflix gift card with a value of 25 USD. Ideal for a gift or to extend your subscription. Enjoy ad-free streaming and download your favorite content to watch offline.', 
+                type: 'programming', 
+                title: 'Website Bug Fixes & Optimization', 
+                value: '$299', 
+                image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80', 
+                description: 'Fix bugs, errors, and performance issues on your existing website. Includes code review, debugging, and optimization for better speed and user experience.', 
+                features: ['Bug fixing', 'Performance optimization', 'Code review', 'Security audit', 'Browser compatibility', 'Mobile responsiveness'],
+                deliveryTime: '3-5 days',
                 offersRequired: 1 
             },
             { 
                 id: 14, 
-                type: 'Netflix', 
-                title: 'Netflix $15 Gift Card', 
-                value: '$15', 
-                image: 'image2.jpg', 
-                description: 'Netflix gift card with a value of 15 USD. Perfect for one month of subscription or as a complement. Access the complete Netflix library and discover new content every week.', 
-                offersRequired: 1 
+                type: 'programming', 
+                title: 'API Development & Integration', 
+                value: '$799', 
+                image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80', 
+                description: 'Custom API development or integration with third-party services. RESTful API design, documentation, and implementation for seamless data exchange between systems.', 
+                features: ['API design', 'RESTful development', 'Third-party integration', 'Documentation', 'Authentication', 'Testing'],
+                deliveryTime: '7-10 days',
+                offersRequired: 2 
             },
             
-            // iTunes
+            // Marketing Services
             { 
                 id: 15, 
-                type: 'iTunes', 
-                title: 'iTunes $1000 Gift Card', 
-                value: '$1000', 
-                image: 'image3.jpg', 
-                description: 'iTunes gift card with a value of 1000 USD. This premium card gives you access to the entire Apple ecosystem. Usable to purchase music, movies, apps, games, books and subscriptions on the App Store, iTunes Store and Apple Books.', 
-                offersRequired: 3 
+                type: 'marketing', 
+                title: 'SEO Audit & Optimization', 
+                value: '$499', 
+                image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1715&q=80', 
+                description: 'Comprehensive SEO audit and optimization to improve your website search engine rankings. Includes technical SEO, on-page optimization, and strategy development.', 
+                features: ['Technical SEO audit', 'On-page optimization', 'Keyword research', 'Competitor analysis', 'Strategy report', '3-month tracking'],
+                deliveryTime: '5-7 days',
+                offersRequired: 2 
             },
             { 
                 id: 16, 
-                type: 'iTunes', 
-                title: 'iTunes $500 Gift Card', 
-                value: '$500', 
-                image: 'image3.jpg', 
-                description: 'iTunes gift card with a value of 500 USD. Ideal for Apple digital content enthusiasts. Buy premium apps, games, movies, music and subscribe to Apple services with this generous card.', 
+                type: 'marketing', 
+                title: 'Social Media Marketing Strategy', 
+                value: '$399', 
+                image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1738&q=80', 
+                description: 'Complete social media marketing strategy including content calendar, platform recommendations, and engagement tactics. Perfect for businesses looking to grow their social presence.', 
+                features: ['Strategy development', 'Content calendar', 'Platform analysis', 'Audience research', 'Engagement tactics', 'Performance metrics'],
+                deliveryTime: '5-7 days',
                 offersRequired: 2 
             },
             { 
                 id: 17, 
-                type: 'iTunes', 
-                title: 'iTunes $100 Gift Card', 
-                value: '$100', 
-                image: 'image3.jpg', 
-                description: 'iTunes gift card with a value of 100 USD. Usable to purchase music, movies, apps, games and books on the App Store, iTunes Store and Apple Books. Perfect for Apple digital content enthusiasts.', 
-                offersRequired: 1 
+                type: 'marketing', 
+                title: 'Google Ads Campaign Management', 
+                value: '$699', 
+                image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80', 
+                description: 'Professional Google Ads campaign setup and management for search, display, and shopping ads. Includes keyword research, ad creation, and performance optimization.', 
+                features: ['Campaign setup', 'Keyword research', 'Ad copy creation', 'Landing page optimization', 'Performance tracking', 'Monthly reports'],
+                deliveryTime: '7-10 days',
+                offersRequired: 2 
             },
             { 
                 id: 18, 
-                type: 'iTunes', 
-                title: 'iTunes $50 Gift Card', 
-                value: '$50', 
-                image: 'image3.jpg', 
-                description: 'iTunes gift card with a value of 50 USD. Ideal for stocking up on digital entertainment. Buy the latest apps, current movies or subscribe to Apple Music to enjoy millions of songs.', 
-                offersRequired: 1 
+                type: 'marketing', 
+                title: 'Facebook & Instagram Ads Management', 
+                value: '$599', 
+                image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1738&q=80', 
+                description: 'Complete Facebook and Instagram ads management including audience targeting, ad creative, and campaign optimization. Perfect for driving engagement and conversions.', 
+                features: ['Audience research', 'Ad creative design', 'Campaign setup', 'A/B testing', 'Performance tracking', 'Weekly optimization'],
+                deliveryTime: '7-10 days',
+                offersRequired: 2 
             },
             { 
                 id: 19, 
-                type: 'iTunes', 
-                title: 'iTunes $25 Gift Card', 
-                value: '$25', 
-                image: 'image3.jpg', 
-                description: 'iTunes gift card with a value of 25 USD. Perfect for discovering the Apple ecosystem or giving as a gift. Use it to purchase premium apps, music albums or rent movies.', 
+                type: 'marketing', 
+                title: 'Email Marketing Campaign', 
+                value: '$299', 
+                image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80', 
+                description: 'Professional email marketing campaign including template design, copywriting, and automation setup. Perfect for nurturing leads and retaining customers.', 
+                features: ['Email template design', 'Copywriting', 'Automation setup', 'List segmentation', 'A/B testing', 'Performance analytics'],
+                deliveryTime: '5-7 days',
                 offersRequired: 1 
             },
             { 
                 id: 20, 
-                type: 'iTunes', 
-                title: 'iTunes $15 Gift Card', 
-                value: '$15', 
-                image: 'image3.jpg', 
-                description: 'iTunes gift card with a value of 15 USD. Ideal for a small purchase or a budget supplement. Perfect for buying a few useful apps or a few music albums.', 
-                offersRequired: 1 
+                type: 'marketing', 
+                title: 'Content Marketing Strategy', 
+                value: '$449', 
+                image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80', 
+                description: 'Comprehensive content marketing strategy including content calendar, topic ideas, and distribution plan. Perfect for building brand authority and driving organic traffic.', 
+                features: ['Content audit', 'Topic research', 'Content calendar', 'Distribution strategy', 'SEO optimization', 'Performance tracking'],
+                deliveryTime: '7-10 days',
+                offersRequired: 2 
             },
             { 
                 id: 21, 
-                type: 'iTunes', 
-                title: 'iTunes $10 Gift Card', 
-                value: '$10', 
-                image: 'image3.jpg', 
-                description: 'iTunes gift card with a value of 10 USD. Perfect for buying a few apps or songs. Also use it to subscribe to services like Apple Music or Apple Arcade.', 
-                offersRequired: 1 
-            },
-            { 
-                id: 22, 
-                type: 'iTunes', 
-                title: 'iTunes $5 Gift Card', 
-                value: '$5', 
-                image: 'image3.jpg', 
-                description: 'iTunes gift card with a value of 5 USD. Ideal for a small purchase or to test the system. Perfect for buying a simple app or a popular song.', 
-                offersRequired: 1 
-            },
-            
-            // Google Play
-            { 
-                id: 23, 
-                type: 'GooglePlay', 
-                title: 'Google Play $1000 Gift Card', 
-                value: '$1000', 
-                image: 'image4.jpg', 
-                description: 'Google Play gift card with a value of 1000 USD. This premium card gives you access to the entire Google ecosystem. Usable to purchase apps, games, movies, music, books and subscriptions on the Google Play Store.', 
+                type: 'marketing', 
+                title: 'Influencer Marketing Campaign', 
+                value: '$999', 
+                image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1738&q=80', 
+                description: 'End-to-end influencer marketing campaign including influencer identification, outreach, campaign management, and performance tracking.', 
+                features: ['Influencer research', 'Outreach & negotiation', 'Campaign management', 'Content guidelines', 'Performance tracking', 'ROI analysis'],
+                deliveryTime: '14-21 days',
                 offersRequired: 3 
             },
             { 
+                id: 22, 
+                type: 'marketing', 
+                title: 'Marketing Analytics Dashboard', 
+                value: '$399', 
+                image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80', 
+                description: 'Custom marketing analytics dashboard that tracks all your marketing metrics in one place. Includes Google Analytics, social media, and advertising data integration.', 
+                features: ['Dashboard setup', 'Data integration', 'Custom metrics', 'Automated reports', 'Data visualization', 'Performance insights'],
+                deliveryTime: '7-10 days',
+                offersRequired: 2 
+            },
+            
+            // Writing Services
+            { 
+                id: 23, 
+                type: 'writing', 
+                title: 'Website Copywriting', 
+                value: '$499', 
+                image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1744&q=80', 
+                description: 'Professional website copywriting for all pages including homepage, about, services, and contact. SEO-optimized and conversion-focused to engage visitors and drive action.', 
+                features: ['Homepage copy', 'Service pages', 'About page', 'Contact page', 'SEO optimization', 'Unlimited revisions'],
+                deliveryTime: '5-7 days',
+                offersRequired: 2 
+            },
+            { 
                 id: 24, 
-                type: 'GooglePlay', 
-                title: 'Google Play $500 Gift Card', 
-                value: '$500', 
-                image: 'image4.jpg', 
-                description: 'Google Play gift card with a value of 500 USD. Ideal for Android digital content enthusiasts. Buy premium apps, games, movies, music and subscribe to Google services with this generous card.', 
+                type: 'writing', 
+                title: 'Blog Article Writing (10 articles)', 
+                value: '$399', 
+                image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1744&q=80', 
+                description: 'Package of 10 professionally written, SEO-optimized blog articles on your chosen topics. Perfect for building content marketing strategy and improving search rankings.', 
+                features: ['10 blog articles', '1000+ words each', 'SEO optimization', 'Keyword research', 'Images included', 'Unlimited revisions'],
+                deliveryTime: '10-14 days',
                 offersRequired: 2 
             },
             { 
                 id: 25, 
-                type: 'GooglePlay', 
-                title: 'Google Play $100 Gift Card', 
-                value: '$100', 
-                image: 'image4.jpg', 
-                description: 'Google Play gift card with a value of 100 USD. Usable to purchase apps, games, movies, music and books on the Google Play Store. Perfect for Android device users.', 
-                offersRequired: 1 
+                type: 'writing', 
+                title: 'E-book Writing (50 pages)', 
+                value: '$1499', 
+                image: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80', 
+                description: 'Professional e-book writing service for a 50-page e-book on your topic of choice. Includes research, writing, editing, and formatting for digital publication.', 
+                features: ['50-page e-book', 'Research included', 'Professional editing', 'Formatting for digital', 'Cover design brief', 'Unlimited revisions'],
+                deliveryTime: '21-30 days',
+                offersRequired: 4 
             },
             { 
                 id: 26, 
-                type: 'GooglePlay', 
-                title: 'Google Play $50 Gift Card', 
-                value: '$50', 
-                image: 'image4.jpg', 
-                description: 'Google Play gift card with a value of 50 USD. Ideal for stocking up on digital entertainment. Buy the latest apps, popular games or subscribe to YouTube Premium to enjoy millions of videos without ads.', 
-                offersRequired: 1 
+                type: 'writing', 
+                title: 'Product Descriptions (50 products)', 
+                value: '$299', 
+                image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80', 
+                description: 'Package of 50 compelling product descriptions for your e-commerce store. SEO-optimized and conversion-focused to increase sales and improve search visibility.', 
+                features: ['50 product descriptions', 'SEO optimization', 'Persuasive writing', 'Keyword research', 'Category optimization', 'Unlimited revisions'],
+                deliveryTime: '7-10 days',
+                offersRequired: 2 
             },
             { 
                 id: 27, 
-                type: 'GooglePlay', 
-                title: 'Google Play $25 Gift Card', 
-                value: '$25', 
-                image: 'image4.jpg', 
-                description: 'Google Play gift card with a value of 25 USD. Perfect for discovering the Android ecosystem or giving as a gift. Use it to purchase premium apps, music albums or rent movies.', 
-                offersRequired: 1 
+                type: 'writing', 
+                title: 'White Paper Writing', 
+                value: '$999', 
+                image: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80', 
+                description: 'Professional white paper writing for B2B marketing. Includes research, data analysis, and persuasive writing to establish thought leadership and generate leads.', 
+                features: ['10-15 page white paper', 'Research & data analysis', 'Professional formatting', 'Graphs & charts', 'Executive summary', 'Unlimited revisions'],
+                deliveryTime: '14-21 days',
+                offersRequired: 3 
             },
             { 
                 id: 28, 
-                type: 'GooglePlay', 
-                title: 'Google Play $15 Gift Card', 
-                value: '$15', 
-                image: 'image4.jpg', 
-                description: 'Google Play gift card with a value of 15 USD. Ideal for a small purchase or a budget supplement. Perfect for buying a few useful apps or a few music albums.', 
+                type: 'writing', 
+                title: 'Social Media Content (30 posts)', 
+                value: '$199', 
+                image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1738&q=80', 
+                description: 'Package of 30 engaging social media posts for Instagram, Facebook, Twitter, and LinkedIn. Includes captions, hashtags, and content ideas for one month.', 
+                features: ['30 social media posts', 'Platform-specific optimization', 'Hashtag research', 'Engagement prompts', 'Content calendar', 'Unlimited revisions'],
+                deliveryTime: '5-7 days',
                 offersRequired: 1 
             },
             { 
                 id: 29, 
-                type: 'GooglePlay', 
-                title: 'Google Play $10 Gift Card', 
-                value: '$10', 
-                image: 'image4.jpg', 
-                description: 'Google Play gift card with a value of 10 USD. Perfect for buying a few apps or songs. Also use it to subscribe to services like YouTube Music or Google One.', 
+                type: 'writing', 
+                title: 'Email Newsletter Copy (5 editions)', 
+                value: '$249', 
+                image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80', 
+                description: 'Package of 5 professionally written email newsletters for your subscriber list. Engaging content that drives opens, clicks, and conversions.', 
+                features: ['5 email newsletters', 'Subject line optimization', 'Personalization', 'Call-to-action focus', 'Mobile optimization', 'Unlimited revisions'],
+                deliveryTime: '5-7 days',
                 offersRequired: 1 
             },
             { 
                 id: 30, 
-                type: 'GooglePlay', 
-                title: 'Google Play $5 Gift Card', 
-                value: '$5', 
-                image: 'image4.jpg', 
-                description: 'Google Play gift card with a value of 5 USD. Ideal for a small purchase or to test the system. Perfect for buying a simple app or a popular song.', 
+                type: 'writing', 
+                title: 'Proofreading & Editing (10,000 words)', 
+                value: '$149', 
+                image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1744&q=80', 
+                description: 'Professional proofreading and editing service for up to 10,000 words. Includes grammar, spelling, punctuation, and style corrections to ensure polished, professional content.', 
+                features: ['Grammar correction', 'Spelling check', 'Punctuation', 'Style consistency', 'Formatting', 'Quick turnaround'],
+                deliveryTime: '2-3 days',
                 offersRequired: 1 
             }
         ];
 
-        // Sort cards by value (descending)
-        giftCards.sort((a, b) => {
+        // Sort services by value (descending)
+        fiverrServices.sort((a, b) => {
             // Extract numeric value from value string
-            const valueA = parseInt(a.value.replace('$', ''));
-            const valueB = parseInt(b.value.replace('$', ''));
+            const valueA = parseInt(a.value.replace('$', '').replace(',', ''));
+            const valueB = parseInt(b.value.replace('$', '').replace(',', ''));
             return valueB - valueA;
         });
 
@@ -902,16 +994,17 @@
         // DOM Elements
         const cardsContainer = document.getElementById('cardsContainer');
         const paginationContainer = document.getElementById('pagination');
-        const modal = document.getElementById('cardModal');
+        const modal = document.getElementById('serviceModal');
         const closeModal = document.getElementById('closeModal');
         const modalImage = document.getElementById('modalImage');
         const modalTitle = document.getElementById('modalTitle');
         const modalValue = document.getElementById('modalValue');
         const modalDescription = document.getElementById('modalDescription');
-        const offersRequired = document.getElementById('offersRequired');
+        const modalFeatures = document.getElementById('modalFeatures');
+        const deliveryTime = document.getElementById('deliveryTime');
         const modalButton = document.getElementById('modalButton');
 
-        // Function to display cards for the current page
+        // Function to display services for the current page
         function displayCards() {
             // Add fade animation
             cardsContainer.classList.add('fade-out');
@@ -921,21 +1014,22 @@
                 
                 const startIndex = (currentPage - 1) * cardsPerPage;
                 const endIndex = startIndex + cardsPerPage;
-                const cardsToShow = giftCards.slice(startIndex, endIndex);
+                const servicesToShow = fiverrServices.slice(startIndex, endIndex);
                 
-                cardsToShow.forEach(card => {
+                servicesToShow.forEach(service => {
                     const cardElement = document.createElement('div');
-                    cardElement.className = `card ${card.type.toLowerCase()}`;
+                    cardElement.className = `card ${service.type}`;
                     
                     cardElement.innerHTML = `
                         <div class="card-image">
-                            <img src="${card.image}" alt="${card.title}">
+                            <img src="${service.image}" alt="${service.title}">
                         </div>
                         <div class="card-content">
-                            <h3 class="card-title">${card.title}</h3>
+                            <h3 class="card-title">${service.title}</h3>
+                            <div class="card-value">${service.value}</div>
                             <div class="card-actions">
-                                <a href="https://rileymarker.com/1858514" class="btn btn-primary" data-id="${card.id}" target="_blank"><i class="fas fa-gift"></i> Get it free</a>
-                                <button class="btn btn-icon view-details" data-id="${card.id}" title="View details">
+                                <a href="#" class="btn btn-primary" data-id="${service.id}" target="_blank"><i class="fas fa-shopping-cart"></i> Order Now</a>
+                                <button class="btn btn-icon view-details" data-id="${service.id}" title="View details">
                                     <i class="fas fa-eye"></i>
                                 </button>
                             </div>
@@ -951,35 +1045,42 @@
                 // Add event listeners for "View details" buttons
                 document.querySelectorAll('.view-details').forEach(button => {
                     button.addEventListener('click', function() {
-                        const cardId = parseInt(this.getAttribute('data-id'));
-                        openModal(cardId);
+                        const serviceId = parseInt(this.getAttribute('data-id'));
+                        openModal(serviceId);
                     });
                 });
             }, 300);
         }
 
-        // Function to open modal with card details
-        function openModal(cardId) {
-            const card = giftCards.find(c => c.id === cardId);
+        // Function to open modal with service details
+        function openModal(serviceId) {
+            const service = fiverrServices.find(s => s.id === serviceId);
             
-            modalImage.src = card.image;
-            modalImage.alt = card.title;
-            modalTitle.textContent = card.title;
-            modalValue.textContent = card.value;
-            modalDescription.textContent = card.description;
+            modalImage.src = service.image;
+            modalImage.alt = service.title;
+            modalTitle.textContent = service.title;
+            modalValue.textContent = service.value;
+            modalDescription.textContent = service.description;
             
-            // Apply Google Play class to modal if necessary
-            modal.querySelector('.modal-content').classList.remove('googleplay');
-            if (card.type === 'GooglePlay') {
-                modal.querySelector('.modal-content').classList.add('googleplay');
+            // Apply writing class to modal if necessary
+            modal.querySelector('.modal-content').classList.remove('writing');
+            if (service.type === 'writing') {
+                modal.querySelector('.modal-content').classList.add('writing');
             }
             
-            // Display number of offers to complete
-            if (card.offersRequired === 1) {
-                offersRequired.innerHTML = `<strong>Offer to complete:</strong> 1 offer of 10 seconds`;
-            } else {
-                offersRequired.innerHTML = `<strong>Offers to complete:</strong> ${card.offersRequired} offers of 10 seconds`;
-            }
+            // Display features
+            modalFeatures.innerHTML = '';
+            service.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                modalFeatures.appendChild(li);
+            });
+            
+            // Display delivery time
+            deliveryTime.innerHTML = `<strong>Delivery time:</strong> ${service.deliveryTime}`;
+            
+            // Update button link (this would be replaced with actual Fiverr link)
+            modalButton.href = `https://www.fiverr.com/services/${service.type}/${service.id}`;
             
             modal.style.display = 'flex';
         }
@@ -988,7 +1089,7 @@
         function setupPagination() {
             paginationContainer.innerHTML = '';
             
-            const totalPages = Math.ceil(giftCards.length / cardsPerPage);
+            const totalPages = Math.ceil(fiverrServices.length / cardsPerPage);
             
             for (let i = 1; i <= totalPages; i++) {
                 const button = document.createElement('button');
@@ -1029,6 +1130,3 @@
     </script>
 </body>
 </html>
-
-
-
